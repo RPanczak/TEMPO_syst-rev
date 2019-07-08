@@ -2,3 +2,9 @@
 .Rhistory
 .RData
 .Ruserdata
+archive/
+backup/
+other/
+search_results/
+temp.docx
+scrapbook.R

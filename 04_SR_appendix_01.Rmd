@@ -30,23 +30,23 @@ p_load(tidyverse, readxl, kableExtra, sjmisc, sjPlot, scales)
 ```
 
 ```{r data, include=FALSE}
-main <- read_excel("TEMPO_SR_2019-06-01.xlsx", sheet = "Main") %>% 
+main <- read_excel("./data/TEMPO_SR_2019-06-01.xlsx", sheet = "Main") %>% 
   replace(is.na(.), "") %>% 
   select(-Peer_review, -Theory, -Data_base, -Est_start, -Est_end) %>% 
-  mutate(Est_pop_size = as.numeric(Est_pop_size)) %>%
-  mutate(Data_size_users = as.numeric(Data_size_users)) %>% 
-  mutate(Data_size_users = as.numeric(Data_size_activities)) %>% 
-  mutate(Year_pub = as.numeric(Year_pub)) %>% 
-  mutate(Est_tunit_num = as.numeric(Est_tunit_num)) %>% 
-  mutate(Est_spat_num_1 = as.numeric(Est_spat_num_1)) %>% 
-  mutate(Est_spat_num_2 = as.numeric(Est_spat_num_2))
+  mutate(Est_pop_size = as.numeric(Est_pop_size),
+         Data_size_users = as.numeric(Data_size_users),
+         Data_size_activities = as.numeric(Data_size_activities),
+         Year_pub = as.numeric(Year_pub),
+         Est_tunit_num = as.numeric(Est_tunit_num),
+         Est_spat_num_1 = as.numeric(Est_spat_num_1),
+         Est_spat_num_2 = as.numeric(Est_spat_num_2))
 # View(main)
 
-variables <- read_excel("TEMPO_SR_2019-06-01.xlsx", sheet = "Variables_short") %>% 
+variables <- read_excel("./data/TEMPO_SR_2019-06-01.xlsx", sheet = "Variables") %>% 
   replace(is.na(.), "")
 # View(variables)
 
-applications <- read_excel("TEMPO_SR_2019-06-01.xlsx", sheet = "Related") %>% 
+applications <- read_excel("./data/TEMPO_SR_2019-06-01.xlsx", sheet = "Related") %>% 
   replace(is.na(.), "")
 # View(applications)
 
@@ -93,7 +93,7 @@ Williams, S. (2016). Statistical uses for mobile phone data: literature review (
 
 # Appendix 2: Characteristics of studies included in the review 
 
-## Type, country, region, purpose and data of applied studies
+## Type, country, region, purpose and type of data 
 
 ```{r}
 main %>% 
@@ -104,7 +104,7 @@ main %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
 ```
 
-## Other characteristics of of applied studies
+## Other characteristics 
 
 ```{r}
 main %>% 

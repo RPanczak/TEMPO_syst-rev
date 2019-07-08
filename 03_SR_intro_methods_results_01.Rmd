@@ -1,19 +1,20 @@
 ---
-title: "Estimating temporary populations: a systematic review of the empirical literature"
+title: 'Estimating temporary populations: a systematic review of the empirical literature'
 author: "Radoslaw Panczak, Elin Charles-Edwards, Jonathan Corcoran"
-# date: "`r format(Sys.time(), '%d %B %Y')`"
+csl: bibliography/demographic-research.csl
 output:
+  html_document:
+    df_print: paged
+    toc: yes
   word_document:
     fig_caption: yes
     toc: yes
-    # reference_docx: template.docx
 link-citations: yes
-csl: bibliography/demographic-research.csl
+editor_options:
+  chunk_output_type: console
 bibliography:
 - bibliography/Temporary Populations.bib
 - bibliography/Extras.bib
-editor_options: 
-  chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
@@ -28,13 +29,13 @@ p_load(tidyverse, readxl, knitr, sjmisc, sjPlot, scales)
 main <- read_excel("./data/TEMPO_SR_2019-06-01.xlsx", sheet = "Main") %>% 
   replace(is.na(.), "") %>% 
   select(-Peer_review, -Theory, -Data_base, -Est_start, -Est_end) %>% 
-  mutate(Est_pop_size = as.numeric(Est_pop_size)) %>%
-  mutate(Data_size_users = as.numeric(Data_size_users)) %>% 
-  mutate(Data_size_users = as.numeric(Data_size_activities)) %>% 
-  mutate(Year_pub = as.numeric(Year_pub)) %>% 
-  mutate(Est_tunit_num = as.numeric(Est_tunit_num)) %>% 
-  mutate(Est_spat_num_1 = as.numeric(Est_spat_num_1)) %>% 
-  mutate(Est_spat_num_2 = as.numeric(Est_spat_num_2))
+  mutate(Est_pop_size = as.numeric(Est_pop_size),
+         Data_size_users = as.numeric(Data_size_users),
+         Data_size_activities = as.numeric(Data_size_activities),
+         Year_pub = as.numeric(Year_pub),
+         Est_tunit_num = as.numeric(Est_tunit_num),
+         Est_spat_num_1 = as.numeric(Est_spat_num_1),
+         Est_spat_num_2 = as.numeric(Est_spat_num_2))
 # View(main)
 
 ```
@@ -44,7 +45,7 @@ main <- read_excel("./data/TEMPO_SR_2019-06-01.xlsx", sheet = "Main") %>%
 
 Conventional population estimates capture a population at a single point in time. Such estimates ignore the short-term dynamism of many populations caused by temporary population mobility, territorial movement which does not result in a permanent change of usual residence [@bellComparingTemporaryMobility2000]. Temporary population movements are defined as moves of one or more night’s duration, but can be broadened to include diurnal movements such as daily commuting [@smithMethodologyEstimatingTemporary1989]. Temporary mobility can have a large impact on the size and composition of small area populations [@charles-edwardsElsewhereAustraliaSnapshot2018] impacting traffic, housing, retail sales, medical services and emergency preparedness to name a select few  [@smithMethodologyEstimatingTemporary1989; @smithTemporaryMigrationCase2007]. As a consequence, there is growing interest and need for temporary population estimates across a broad range of purposes including the planning and delivery of goods and services, fiscal equalisation [@graebertNorthwestMichiganSeasonal2014], retail analysis, transport demand, emergency preparedness, and as better denominators for crime and epidemiological models [@charles-edwardsFrameworkOfficialTemporary].
 
-Scholarship concerned with developing the conceptual aspects of temporary populations has seen a longstanding interest with early work appearing in the Unites States in the 1950s [@foleyUrbanDaytimePopulation1954; @schmittEstimatingDaytimePopulations1956]. This early work proposed building on traditional demographic approaches to generate temporary population estimates and was first to recognise the potential value of symptomatic data as a source for such statistics. Several decades later it was Smith [-@smithHowTallyTemporary1987; -@smithMethodologyEstimatingTemporary1989] that proposed set of metrics (visitor-days and visitor-years) to capture measures of population present as well as highlighting the difficulty of validating estimates of temporary populations. More recently, Bell [@bellDataTheoryMethod2000; @bellMeasuringTemporaryMobility2004] argued that estimates of temporary populations are contingent on developing a rigorous understanding of temporary population mobility. Here he drew attention to four dimensions (movement intensity, duration, seasonality and spatial impact) which he argued are associated with temporary mobility and that drive the change in stock of temporary visitors at both the origin and at the destination.
+Scholarship concerned with developing the conceptual aspects of temporary populations has seen a longstanding interest with early work appearing in the Unites States in the 1950s [@foleyUrbanDaytimePopulation1954; @schmittEstimatingDaytimePopulations1956]. This early work proposed building on traditional demographic approaches to generate temporary population estimates and was first to recognise the potential value of symptomatic data as a source for such statistics. Several decades later it was Smith [-@smithHowTallyTemporary1987; -@smithMethodologyEstimatingTemporary1989] that proposed set of metrics (visitor-days and visitor-years) to capture measures of population present as well as highlighting the difficulty of validating estimates of temporary populations. More recently, Bell [-@bellDataTheoryMethod2000; -@bellMeasuringTemporaryMobility2004] argued that estimates of temporary populations are contingent on developing a rigorous understanding of temporary population mobility. Here he drew attention to four dimensions (movement intensity, duration, seasonality and spatial impact) which he argued are associated with temporary mobility and that drive the change in stock of temporary visitors at both the origin and at the destination.
 
 Despite growing interest in temporary population statistics, they still do not form part of the standard suite of any official population statistics. Historically, this been due to a lack of data capturing temporary populations, but also nascent conceptualisation of temporary populations and lack of standard methodologies for their production. Indeed, Smith [-@smithMethodologyEstimatingTemporary1989], in his seminal paper on the estimation of temporary populations, noted that the development of a methodology applicable across a wide range of population and scenarios was ‘most likely impossible’. He could not have predicted the proliferation of geo-located data from mobile phones and other technologies in the 21st Century with potential for the sensing of temporary populations across large geographic areas and in widely differing contexts. The current study assesses progress in the field of temporary population statistics. To this end, we conduct a mixed method review of the international literature on the estimation of temporary populations to identify the contemporary state of the art. To this end the study seeks to understand the volume, geography, population coverage along with the data and methods used to generate temporary population estimates, and investigate how such estimates might be reconciled alongside traditional population statistics. 
 
@@ -86,13 +87,18 @@ frq(main$Source)
 ```
 
 
-Collectively, our initial search strategy initially identified around 28 thousands documents. After removing duplicates, titles and abstracts were screen for eligibility resulting in the set of 122 articles. The final stage involved a screening of full texts resulting in the removal of a further 69 articles. Additional `r nrow(filter(main, Source == "manual"))` articles were identified from other sources and `r nrow(filter(main, Source == "update"))` - captured by scaning updates of the search results. A total of `r nrow(main)` studies were taken forward to form part of the analysis (_Appendix 2_). Figure 1 summarises the results of the search.
+Collectively, our initial search strategy initially identified around 22.9 thousands documents. After removing duplicates, titles and abstracts were screen for eligibility resulting in the set of 122 articles. The final stage involved a screening of full texts resulting in the removal of a further 68 articles. Additional `r nrow(filter(main, Source == "manual"))` articles were identified from other sources and `r nrow(filter(main, Source == "update"))` - captured by scaning updates of the search results. A total of `r nrow(main)` studies were taken forward to form part of the analysis (_Appendix 2_). Figure 1 summarises the results of the search.
 
 **Figure 1.** Flowchart of study selection. 
 
 ![](./figures/flow_chart.png)
 
-The `r nrow(main)` studies were published between `r number(min(main$Year_pub, na.rm = TRUE), big.mark = "")` and `r number(max(main$Year_pub, na.rm = TRUE), big.mark = "")` (median publication year `r number(median(main$Year_pub, na.rm = TRUE), big.mark = "")`) and focused on various aspects of temporary population estimation, including the production of temporary population statistics (Table 1; _Appendix 2_). There has been exponential growth in the number of studies since the first in 1925, with more than third of the studies (`r format(round(100 * nrow(filter(main, Year_pub >= 2015)) / nrow(main), 1), nsmall = 1)`%) published since 2015. A total of `r percent(nrow(filter(main, Pub_type == "article"))/nrow(main))` of studies were published as articles followed by `r percent(nrow(filter(main, Pub_type == "report"))/nrow(main))` as reports and `r percent(nrow(filter(main, Pub_type == "conference"))/nrow(main))` as conference proceedings or presentations.
+```{r eval=FALSE, include=FALSE}
+summary(main$Year_pub)
+frq(main$Pub_type)
+```
+
+The `r nrow(main)` studies were published between `r number(min(main$Year_pub, na.rm = TRUE), big.mark = "")` and `r number(max(main$Year_pub, na.rm = TRUE), big.mark = "")` (median publication year `r number(median(main$Year_pub, na.rm = TRUE), big.mark = "")`) and focused on various aspects of temporary population estimation, including the production of temporary population statistics (Table 1; _Appendix 2_). There has been exponential growth in the number of studies since the first publication in 1925, with more than third of the studies (`r format(round(100 * nrow(filter(main, Year_pub >= 2015)) / nrow(main), 1), nsmall = 1)`%) published since 2015. A total of `r percent(nrow(filter(main, Pub_type == "article"))/nrow(main))` of studies were published as articles followed by `r percent(nrow(filter(main, Pub_type == "report"))/nrow(main))` as reports and `r percent(nrow(filter(main, Pub_type == "conference"))/nrow(main))` as conference proceedings or presentations.
 
 ```{r eval=FALSE, include=FALSE}
 main %>% 
@@ -110,46 +116,25 @@ The following discussion draws on the content of the included papers that are ci
 
 ```{r eval=FALSE, include=FALSE}
 main %>% 
-  select(Year_pub, starts_with("Type_"), -Type_other) %>% 
-  gather(Order, Type, Type_1:Type_3) %>% 
+  select(Year_pub, starts_with("Type_")) %>% 
+  gather(Order, Type, Type_1:Type_4) %>% 
   filter(Type != "") %>% 
   frq(Type, sort.frq = c("desc"))
 ```
 
-Administrative data, defined as **XXXXX** , formed the basis or were the strong component of the largest number of studies (Figure 2). First report was based on the 1921 Census data from England and Wales and used data on place of work to estimate daytime population [@censusofenglandandwales1921Workplaces1925]. These estimates continue to be delivered with the latest Census also offering workday population estimates for England and Wales [@officefornationalstatistics2011CensusWorkday2013; see also related work in _Appendix 4_]. Census data from the United Kingdom were also extensively used as a part of methodologies developed by more recent work of [@smithNationalPopulationData2005] and [@martinDevelopingFlexibleFramework2015].
+Administrative data, defined as large scale data collected by official agencies (such as censuses or registries), formed the basis or were the strong component of the largest number of studies (Figure 2). First report was based on the 1921 Census data from England and Wales and used data on place of work to estimate daytime population [@censusofenglandandwales1921Workplaces1925]. These estimates continue to be delivered with the latest Census also offering workday population estimates for England and Wales [@officefornationalstatistics2011CensusWorkday2013; see also related work in _Appendix 4_]. Census data from the United Kingdom were also extensively used as a part of methodologies developed by more recent work of [@smithNationalPopulationData2005] and [@martinDevelopingFlexibleFramework2015].
 
 
 ```{r figure_2, fig.height=3.675, fig.width=4.9, warning=FALSE}
 main %>% select(Year_pub, starts_with("Type_")) %>% 
-  mutate(denominator = rowSums(!is.na(select(., -Year_pub)))) %>% 
   gather(Order, Type, Type_1:Type_4) %>% 
   filter(Type != "") %>% 
   filter(Type != "SM") %>% # count of 1 so no line possible
-  mutate(weight = 1/denominator) %>% 
-  select(-Order, -denominator) %>% 
-  arrange(Type, Year_pub) %>% 
-  group_by(Type) %>% 
-  mutate(cumulative = cumsum(weight)) %>% 
-  ggplot(aes(Year_pub, cumulative, colour = Type)) + 
-  geom_line() +
-  scale_fill_brewer(palette = "Set3") +
-  theme_minimal() + 
-  labs(x = "Year of publication",
-       y = "Number of studies")
-```
-
-
-**Figure 2.** Cumulative distribution of year of publication across main themes. Note: Studies belonging to more than one category were weighted by dividing all categories by 1 and assigning equal weights. This procedure excludes the Social Media (SM) category as it only has one member. 
-
-```{r figure_2_alt, eval=FALSE, fig.height=3.675, fig.width=4.9, warning=FALSE}
-main %>% select(Year_pub, starts_with("Type_")) %>% 
-  gather(Order, Type, Type_1:Type_4) %>% 
-  filter(Type != "") %>% 
-  filter(Type != "SM") %>% # count of 1 so no line possible
-  select(-Order, -Type_other) %>% 
-  arrange(Type, Year_pub) %>% 
-  group_by(Type, Year_pub) %>% 
+  select(-Order) %>% 
+  arrange(Year_pub, Type) %>% 
+  group_by(Year_pub, Type) %>% 
   mutate(count = n()) %>% 
+  distinct() %>% 
   group_by(Type) %>% 
   mutate(cumulative = cumsum(count)) %>% 
   ggplot(aes(Year_pub, cumulative, colour = Type)) + 
@@ -157,8 +142,10 @@ main %>% select(Year_pub, starts_with("Type_")) %>%
   scale_fill_brewer(palette = "Set3") +
   theme_minimal() + 
   labs(x = "Year of publication",
-       y = "Number of studies")
+       y = "Cumulative number of themes")
 ```
+
+**Figure 2.** Cumulative distribution of year of publication across main themes. Note: Studies can belong to more than one category. 'Social Media (SM)' category has been excluded as it only has one member. 
 
 The equivalent of this work in the United States employ commuter-adjusted population estimates using the American Community Survey to adjust night-time population counts [@mckenzieCommuteradjustedPopulationEstimates2013]. Other primarily Census-based studies from the United States include the work from the Seattle City Planning Commission [-@seattlecityplanningcommissionDaytimeNighttimePopulation1951] and Bureau of the Census [-@bureauofthecensusPopulationEstimatesSurvival1956], @fultonEstimatingDaytimePopulation1984, @goberGeographyNonpermanentResidence1984, @nelsonEstimatingFunctionalPopulation1992, @mcphersonDayNightPopulation2003, @kobayashiVisualizingDiurnalPopulation2011, @swansonEstimatingFactoPopulation2011, @hodurServicePopulationEstimates2015, @kimModellingDaytimePopulation2017, @boeingEstimatingLocalDaytime2018 and @esriMethodologyStatement20182018. Each used a wide selection of methods to adjust Census estimates on variety of scales, often accompanied by other data sources. This for example includes, location of work, transportation models or payroll data that helps to determine size and location of daytime or seasonal population.  
 
@@ -173,11 +160,11 @@ Although censuses and surveys tend to lose their position as primary source of d
 Third largest category of studies, and one that experienced the fastest growth in recent years, is work based on mobile phone (MP) data. The earliest identified application of MP data to estimate temporary populations was done in response to Haiti earthquake [@bengtssonImprovedResponseDisasters2011]. That was quickly followed by large scale estimates for Japan [@teradaPopulationEstimationTechnology2013] and analyses of temporary populations in France and Portugal [@devilleDynamicPopulationMapping2014]. Spatial coverage of MP based studies often reflects availability and accessibility of data. For instance, Italy and in particular Milan, are the subject of a number of studies due to the fact that local providers offer access to the aggregated and anonymized call detail records (CDR) or other data such as **XXXXX** [@khodabandelouPopulationEstimationMobile2016; @khodabandelouEstimationStaticDynamic2018]. MP data are also used in parallel with other sources and methods for instance in dasymetric interpolation [@jarvEnhancingSpatialAccuracy2017] or together with transport survey data [@lwinSpaceTimeMultiple2016].
 
 
-Less common, yet still significant are studies were based on utilities data [@goldschmidtDemoflushEstimatingPopulation1976; @monmouthcountyplanningboardSummerCoastalPopulation2008; @rigall-i-torrentEstimatingOvernightFacto2010; @mckenzieDemographicsFireRisk2016; @edmondsonMakingItCount], remote sensing [@taubenbockLinkingStructuralUrban2007; @stathakisSeasonalPopulationEstimates2018] and Wi-Fi [@kontokostaUrbanPhenologyRealtime2017]. Contrary to our expectations, social media (SM) data were only used by one study [@lwinSpaceTimeMultiple2016].
+Less common, yet still significant are studies were based on utilities data [@goldschmidtDemoflushEstimatingPopulation1976; @monmouthcountyplanningboardSummerCoastalPopulation2008; @rigall-i-torrentEstimatingOvernightFacto2010; @mckenzieDemographicsFireRisk2016; @edmondsonMakingItCount2019], remote sensing [@taubenbockLinkingStructuralUrban2007; @stathakisSeasonalPopulationEstimates2018] and Wi-Fi [@kontokostaUrbanPhenologyRealtime2017]. Contrary to our expectations, social media (SM) data were only used by one study [@lwinSpaceTimeMultiple2016].
 
 **ADD CROLLS 2019 TO WIFI**
 
-Recognition of complexity of providing estimates together with growing availability of data also led to attempts combining multiple sources of data [@fehrpeersNapaCountyTravel2014, @edmondsonMakingItCount].
+Recognition of complexity of providing estimates together with growing availability of data also led to attempts combining multiple sources of data [@fehrpeersNapaCountyTravel2014, @edmondsonMakingItCount2019].
 
 **FIX NANTUCKET DATE TO 219?**
 
@@ -246,7 +233,7 @@ main %>%
 ### Number of spatial units
 
 There was a great variation in the number of spatial units used to produce estimates ranging from `r number(min(main$Est_spat_num_1, na.rm = TRUE))` to `r number(max(main$Est_spat_num_1, na.rm = TRUE), big.mark = ",")`
-with median value of `r number(median(main$Est_spat_num_1, na.rm = TRUE), big.mark = ",")`. `r number(nrow(filter(main, Est_spat_num_1 == 1)))` studies reported on single spatial unit of various size such as island [@edmondsonMakingItCount], administrative region [@fehrpeersNapaCountyTravel2014], city [@goldschmidtDemoflushEstimatingPopulation1976] or campus [@charles-edwardsEstimatingServicePopulation2013]. Studies reporting on larger amount of units provided estimates on building level [@araImpactTemporalPopulation2014] or used high resolution grids [@adamiakSeasonalResidenceCounterurbanization2017] or administrative areas [@mckenzieCommuteradjustedPopulationEstimates2013], often with national or large-area coverage. `r number(nrow(filter(main, is.na(Est_spat_num_1))))` studies did not report exact number of spatial units. 
+with median value of `r number(median(main$Est_spat_num_1, na.rm = TRUE), big.mark = ",")`. `r number(nrow(filter(main, Est_spat_num_1 == 1)))` studies reported on single spatial unit of various size such as island [@edmondsonMakingItCount2019], administrative region [@fehrpeersNapaCountyTravel2014], city [@goldschmidtDemoflushEstimatingPopulation1976] or campus [@charles-edwardsEstimatingServicePopulation2013]. Studies reporting on larger amount of units provided estimates on building level [@araImpactTemporalPopulation2014] or used high resolution grids [@adamiakSeasonalResidenceCounterurbanization2017] or administrative areas [@mckenzieCommuteradjustedPopulationEstimates2013], often with national or large-area coverage. `r number(nrow(filter(main, is.na(Est_spat_num_1))))` studies did not report exact number of spatial units. 
 
 ```{r, eval=FALSE}
 descr(main, Est_spat_num_1)
@@ -403,7 +390,7 @@ Very small amount of studies provide code /software used for analyses. Mention n
 Importance of good quality of census and survey data as a basis for other methods.
 
 In the absence of official estimates cities and regions attempt their own calculations 
-[@lambEstimatingSeasonalPopulation1999, @monmouthcountyplanningboardSummerCoastalPopulation2008, @fehrpeersNapaCountyTravel2014, @hodurServicePopulationEstimates2015, @edmondsonMakingItCount]
+[@lambEstimatingSeasonalPopulation1999, @monmouthcountyplanningboardSummerCoastalPopulation2008, @fehrpeersNapaCountyTravel2014, @hodurServicePopulationEstimates2015, @edmondsonMakingItCount2019]
 
 
 ## Strengths
@@ -550,8 +537,6 @@ table_1 %>%
 
 # Acknowledgments
 
-We would like to thank the authors that responded to queries about details of their work: Christoph Aubrecht, Filipe Batista e Silva, Andrew Collins, Donald G. Janelle, David Martin, Chris Needham, Paola Pucci, Stanley Smith and Martijn Tennekes. 
-
-**ADD NIK & ANDY**
+We would like to thank the authors that responded to queries about details of their work: Christoph Aubrecht, Filipe Batista e Silva, Andrew Collins, Donald G. Janelle, Nik Lomax, David Martin, Chris Needham, Andy Newing, Paola Pucci, Stanley Smith and Martijn Tennekes. 
 
 

@@ -1,0 +1,29 @@
+---
+title: "Estimating temporary populations: a systematic review of the empirical literature"
+subtitle: "Appendix 3: Full list of studies included in the review"
+author: "Radoslaw Panczak, Elin Charles-Edwards, Jonathan Corcoran"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output:
+  bookdown::html_document2:
+    highlight: pygments
+    number_sections: yes
+    theme: united
+    toc: yes
+    toc_depth: 4
+    # toc_float: yes
+link-citations: yes
+csl: bibliography/demographic-research.csl
+bibliography:
+- bibliography/Temporary Populations.bib
+- bibliography/Extras.bib
+header-includes: 
+  - \pagenumbering{gobble}
+nocite: | 
+  @censusofenglandandwales1921Workplaces1925, 
+  @thornthwaiteLouisvilleKentuckyStudy1929,
+  @breeseDaytimePopulationCentral1947,
+  @newyorkregionalplanassociationPersonsVehiclesEntering1949,
+  @seattlecityplanningcommissionDaytimeNighttimePopulation1951
+---
+
+<div id="refs"></div>

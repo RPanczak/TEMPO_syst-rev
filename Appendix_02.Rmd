@@ -1,6 +1,6 @@
 ---
 title: "Estimating temporary populations: a systematic review of the empirical literature"
-subtitle: "Supplementary materials"
+subtitle: "Appendix 2: Search strategy"
 author: "Radoslaw Panczak, Elin Charles-Edwards, Jonathan Corcoran"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
@@ -12,47 +12,11 @@ output:
     toc_depth: 4
     # toc_float: yes
 link-citations: yes
-csl: demographic-research.csl
-bibliography:
-- Temporary_Populations.bib
-- Extras.bib
 header-includes: 
   - \pagenumbering{gobble}
 ---
 
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-
-library(pacman)
-p_load(tidyverse, readxl, kableExtra, sjmisc, sjPlot, scales)
-
-```
-
-```{r data, include=FALSE}
-main <- read_excel("./data/TEMPO_SR_2019-06-01.xlsx", sheet = "Main") %>% 
-  replace(is.na(.), "") %>% 
-  select(-Peer_review, -Theory, -Data_base, -Est_start, -Est_end) %>% 
-  mutate(Est_pop_size = as.numeric(Est_pop_size),
-         Data_size_users = as.numeric(Data_size_users),
-         Data_size_activities = as.numeric(Data_size_activities),
-         Year_pub = as.numeric(Year_pub),
-         Est_tunit_num = as.numeric(Est_tunit_num),
-         Est_spat_num_1 = as.numeric(Est_spat_num_1),
-         Est_spat_num_2 = as.numeric(Est_spat_num_2))
-# View(main)
-
-variables <- read_excel("./data/TEMPO_SR_2019-06-01.xlsx", sheet = "Variables") %>% 
-  replace(is.na(.), "")
-# View(variables)
-
-applications <- read_excel("./data/TEMPO_SR_2019-06-01.xlsx", sheet = "Related") %>% 
-  replace(is.na(.), "")
-# View(applications)
-
-```
-
-# Appendix 1: Search strategy
+# Appendix 2: Search strategy
 
 We searched four major databases of scientific literature: arXiv, Google Scholar, Scopus and Web of Science. 
 
@@ -91,43 +55,4 @@ Martí, P., Serrano-Estrada, L., & Nolasco-Cirugeda, A. (2018). Social Media dat
 Williams, S. (2016). Statistical uses for mobile phone data: literature review (ONS methodology working paper series No. 8). Newport: Office for National Statistics. Retrieved from https://www.ons.gov.uk/methodology/methodologicalpublications/generalmethodology/onsworkingpaperseries/onsmethodologyworkingpaperseriesno8statisticalusesformobilephonedataliteraturereview
 
 
-# Appendix 2: Characteristics of studies included in the review 
 
-## Type, country, region, purpose and type of data 
-
-```{r}
-main %>% 
-  select(FA_surname, Year_pub, 
-         Pub_type, Journal_name, Title, 
-         Type_1, Type_2, Type_3, Type_4, Source) %>% 
-  kable() %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
-```
-
-## Other characteristics 
-
-```{r}
-main %>% 
-  select(FA_surname, Year_pub,
-         Country_1, Country_2, National, Region_type, Region,
-         Day, Purpose_1, Purpose_2, 
-         Data_1:Data_10, 
-         Data_size_users, Est_pop_size, 
-         Est_unit_type_1, Est_unit_type_2	, Est_spat_num_1, Est_spat_num_2, 
-         Est_tunit, Est_tunit_num, 
-         Est_avail, Validation, Validation_data, Validation_method_1, Validation_method_2, 
-         Software_use_1:Software_use_4, Software_avail) %>% 
-  kable() %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
-```
-
-# Appendix 3: Applications & related studies
-
-```{r}
-kable(applications) %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
-```
-
-# References
-
-<div id="refs"></div>

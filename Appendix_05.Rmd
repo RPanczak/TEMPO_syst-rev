@@ -1,0 +1,44 @@
+---
+title: "Estimating temporary populations: a systematic review of the empirical literature"
+subtitle: "Appendix 5: Applications & related studies"
+author: "Radoslaw Panczak, Elin Charles-Edwards, Jonathan Corcoran"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output:
+  bookdown::html_document2:
+    highlight: pygments
+    number_sections: yes
+    theme: united
+    toc: yes
+    toc_depth: 4
+    # toc_float: yes
+link-citations: yes
+csl: bibliography/demographic-research.csl
+bibliography:
+- bibliography/Temporary Populations.bib
+- bibliography/Extras.bib
+header-includes: 
+  - \pagenumbering{gobble}
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(pacman)
+p_load(tidyverse, readxl, kableExtra)
+
+```
+
+```{r data, include=FALSE}
+applications <- read_excel("./data/TEMPO_SR_2019-07-09.xlsx", sheet = "Related") %>% 
+  replace(is.na(.), "")
+```
+
+```{r}
+applications %>% 
+  kable(col.names = c("Author",
+                      "Year of publication",
+                      "Applications and related studies")) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+```
+

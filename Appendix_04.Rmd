@@ -1,0 +1,72 @@
+---
+title: "Estimating temporary populations: a systematic review of the empirical literature"
+subtitle: "Appendix 4: Main characteristics of the studies"
+author: "Radoslaw Panczak, Elin Charles-Edwards, Jonathan Corcoran"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output:
+  bookdown::html_document2:
+    highlight: pygments
+    number_sections: yes
+    theme: united
+    toc: yes
+    toc_depth: 4
+    # toc_float: yes
+link-citations: yes
+csl: bibliography/demographic-research.csl
+bibliography:
+- bibliography/Temporary Populations.bib
+- bibliography/Extras.bib
+header-includes: 
+  - \pagenumbering{gobble}
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(pacman)
+p_load(tidyverse, readxl, kableExtra)
+
+```
+
+```{r data, include=FALSE}
+main <- read_excel("./data/TEMPO_SR_2019-07-09.xlsx", sheet = "Main") %>% 
+  replace(is.na(.), "")
+```
+
+# Source, type, main data and methods 
+
+```{r}
+main %>% 
+  select(FA_surname, Year_pub, 
+         Source, Pub_type, 
+         Type_1, Type_2, Type_3, Type_4, Method) %>% 
+  kable(col.names = c("Author",
+                      "Year of publication",
+                      "Source",
+                      "Type of publication",
+                      "Main data type 1",
+                      "Main data type 2",
+                      "Main data type 3",
+                      "Main data type 4",
+                      "Method of estimating temporary population")) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+```
+
+# Other characteristics 
+
+```{r}
+main %>% 
+  select(FA_surname, Year_pub,
+         National, Country_1, Country_2, Region_type, Region,
+         Day, Est_tunit, Est_tunit_num, 
+         Purpose_1, Purpose_2, 
+         Data_size_users, Est_pop_size, 
+         Est_unit_type_1, Est_unit_type_2	, Est_spat_num_1, Est_spat_num_2, 
+         Validation, Software_avail, Est_avail) %>% 
+  kable() %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+```
+
+
+

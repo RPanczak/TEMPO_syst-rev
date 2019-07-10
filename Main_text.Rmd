@@ -3,13 +3,13 @@ title: 'Estimating temporary populations: a systematic review of the empirical l
 author: "Radoslaw Panczak, Elin Charles-Edwards, Jonathan Corcoran"
 csl: bibliography/demographic-research.csl
 output:
-  html_document:
-    df_print: paged
-    toc: yes
   word_document:
     fig_caption: yes
     toc: no
     # reference_docx: styles.docx
+  html_document:
+    df_print: paged
+    toc: yes
 link-citations: yes
 editor_options:
   chunk_output_type: console
@@ -65,7 +65,7 @@ To supplement the key search terms listed above, inclusion and exclusion criteri
 - Studies were required to detail their methodology for at least one geographical region and capture non-resident populations. 
 - Studies were excluded if they focused their analyses on certain population bases (for instance, social media or mobile phone users) without any extrapolation to the total population of a region. 
 
-- Studies estimating tourist arrivals and crowds were also excluded given that our interest here is one to establish more complete and stable populations in the areas in contrast to subgroups (such as tourists) or highly transient populations (such as crowds or pedestrians).
+- Studies estimating tourist arrivals and crowds were also excluded given that our interest here is on studies aiming to establish more complete and stable populations in the areas in contrast to subgroups (such as tourists) or highly transient populations (such as crowds or pedestrians).
 
 - Book reviews and magazines were excluded. 
 
@@ -395,7 +395,7 @@ main %>%
 
 # Tables
 
-**Table 1.** Main characteristics of included studies. Note: * indicates that study can belong to more than one category.
+**Table 1.** Selected characteristics of included studies. Note: * indicates that study can belong to more than one category.
 
 ```{r}
 
@@ -418,7 +418,7 @@ temp <- main %>%
 
 
 table_1 <- rbind(table_1,
-                 cbind(Characteristic = c("Source of publication", 
+                 cbind(Characteristic = c("Search method", 
                                           cbind(rep("", length(temp[[1]]$val)-1))),
                        Value = as.character(temp[[1]]$val), 
                        `n / median` = temp[[1]]$frq, 
@@ -445,7 +445,7 @@ temp <- main %>%
   gather(Order, Purpose, Purpose_1:Purpose_2) %>% 
   mutate(Purpose = ifelse(Purpose %in% c("emergency planning", "service population", "epidemiology", "commuting") | is.na(Purpose), Purpose, "other")) %>% 
   frq(Purpose, sort.frq = "desc", show.na = FALSE)
-                 
+
 table_1 <- rbind(table_1,
                  cbind(Characteristic = c("Purpose of publication*", 
                                           cbind(rep("", length(temp[[1]]$val)-1))),
@@ -453,6 +453,23 @@ table_1 <- rbind(table_1,
                        `n / median` = temp[[1]]$frq, 
                        `% / min; max` = temp[[1]]$raw.prc * 2)
 )
+
+# Data type
+# Purpose
+temp <- main %>% 
+  select(starts_with("Type_")) %>% 
+  mutate_all(na_if, "") %>%   
+  gather(Order, Type, Type_1:Type_4) %>% 
+  frq(Type, sort.frq = "desc", show.na = FALSE)
+
+table_1 <- rbind(table_1,
+                 cbind(Characteristic = c("Purpose of publication*", 
+                                          cbind(rep("", length(temp[[1]]$val)-1))),
+                       Value = as.character(temp[[1]]$val), 
+                       `n / median` = temp[[1]]$frq, 
+                       `% / min; max` = temp[[1]]$raw.prc * 4)
+)
+
 
 
 # Region of study
@@ -498,6 +515,19 @@ table_1 <- rbind(table_1,
                                           as.character(number(max(main$Est_spat_num_1, na.rm = TRUE), big.mark = ",")),
                                           sep = "; ")
                  )
+)
+
+# Temp unit
+temp <- main %>% 
+  mutate_all(na_if, "") %>%   
+  frq(Est_tunit, sort.frq = "desc", show.na = FALSE)
+
+table_1 <- rbind(table_1,
+                 cbind(Characteristic = c("Temporal unit of estimates", 
+                                          cbind(rep("", length(temp[[1]]$val)-1))),
+                       Value = as.character(temp[[1]]$val), 
+                       `n / median` = temp[[1]]$frq, 
+                       `% / min; max` = temp[[1]]$raw.prc)
 )
 
 

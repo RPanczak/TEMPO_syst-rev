@@ -23,7 +23,12 @@ nocite: |
   @thornthwaiteLouisvilleKentuckyStudy1929,
   @breeseDaytimePopulationCentral1947,
   @newyorkregionalplanassociationPersonsVehiclesEntering1949,
-  @seattlecityplanningcommissionDaytimeNighttimePopulation1951
+  @seattlecityplanningcommissionDaytimeNighttimePopulation1951,
+  @foleyDailyMovementPopulation1952,
+  @instituteforresearchinsocialscienceuniversityofnorthcarolinaPopulationDistributionSpatial1952,
+  @menzlerEstimateDaytimePopulation1952,
+  @sharpNonResidentialPopulationCentral1955,
+  
 ---
 
 <div id="refs"></div>

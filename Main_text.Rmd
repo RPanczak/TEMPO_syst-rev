@@ -89,14 +89,14 @@ nrow(main)
 frq(main$Source)
 ```
 
-Collectively, our initial search strategy initially identified around 22.9 thousands documents (Figure 1). After removing duplicates, titles and abstracts were screen for eligibility resulting in the set of 122 articles. The final stage involved a screening of full texts resulting in the removal of a further 68 articles. Additional `r nrow(filter(main, Source == "manual"))` articles were identified from other sources and `r nrow(filter(main, Source == "update"))` - captured by scaning updates of the search results. A total of `r nrow(main)` studies were taken forward to form part of the analysis (_Appendix 3_).
+Collectively, our initial search strategy initially identified around 22.9 thousands documents (Figure 1). After removing duplicates, titles and abstracts were screen for eligibility resulting in the set of 122 articles. The final stage involved a screening of full texts resulting in the removal of a further 68 articles. Additional `r nrow(filter(main, Source == "Manual"))` articles were identified from other sources and `r nrow(filter(main, Source == "Update"))` - captured by scaning updates of the search results. A total of `r nrow(main)` studies were taken forward to form part of the analysis (_Appendix 3_).
 
 ```{r eval=FALSE, include=FALSE}
 summary(main$Year_pub)
 frq(main$Pub_type)
 ```
 
-The `r nrow(main)` studies were published between `r number(min(main$Year_pub, na.rm = TRUE), big.mark = "")` and `r number(max(main$Year_pub, na.rm = TRUE), big.mark = "")` (median publication year `r number(median(main$Year_pub, na.rm = TRUE), big.mark = "")`) and focused on various aspects of temporary population estimation, including the production of temporary population statistics (Table 1; _Appendix 4_). There has been exponential growth in the number of studies since the first publication in 1925, with more than third of the studies (`r format(round(100 * nrow(filter(main, Year_pub >= 2015)) / nrow(main), 1), nsmall = 1)`%) published since 2015. A total of `r percent(nrow(filter(main, Pub_type == "article"))/nrow(main))` of studies were published as articles followed by `r percent(nrow(filter(main, Pub_type == "report"))/nrow(main))` as reports and `r percent(nrow(filter(main, Pub_type == "conference"))/nrow(main))` as conference proceedings or presentations.
+The `r nrow(main)` studies were published between `r number(min(main$Year_pub, na.rm = TRUE), big.mark = "")` and `r number(max(main$Year_pub, na.rm = TRUE), big.mark = "")` (median publication year `r number(median(main$Year_pub, na.rm = TRUE), big.mark = "")`) and focused on various aspects of temporary population estimation, including the production of temporary population statistics (Table 1; _Appendix 4_). There has been exponential growth in the number of studies since the first publication in 1925, with more than third of the studies (`r format(round(100 * nrow(filter(main, Year_pub >= 2015)) / nrow(main), 1), nsmall = 1)`%) published since 2015. A total of `r percent(nrow(filter(main, Pub_type == "Article"))/nrow(main))` of studies were published as articles followed by `r percent(nrow(filter(main, Pub_type == "Report"))/nrow(main))` as reports and `r percent(nrow(filter(main, Pub_type == "Conference"))/nrow(main))` as conference proceedings or presentations.
 
 ```{r eval=FALSE, include=FALSE}
 main %>% 
@@ -106,7 +106,7 @@ main %>%
   frq(count, sort.frq = c("desc"))
 ```
 
-The following discussion draws on the content of the included papers that are cited throughout the text as required. Emergency planning (n=`r nrow(filter(main, Purpose_1 == "emergency planning" | Purpose_2 == "emergency planning"))`) was the most frequently quoted as reason for producing temporary population estimates followed by understanding service populations (n=`r nrow(filter(main, Purpose_1 == "service population" | Purpose_2 == "service population"))`), epidemiology (n=`r nrow(filter(main, Purpose_1 == "epidemiology" | Purpose_2 == "epidemiology"))`) and commuting (n=`r nrow(filter(main, Purpose_1 == "commuting" | Purpose_2 == "commuting"))`), many studies directly discussing a domain of application. We next discuss the papers under 6 broad domains; (1) data; (2) methods; (3) the geography of estimates; (4) temporal units; (5) population size and composition; and, (6) reproducibility.
+The following discussion draws on the content of the included papers that are cited throughout the text as required. Emergency planning (n=`r nrow(filter(main, Purpose_1 == "Emergency planning" | Purpose_2 == "Emergency planning"))`) was the most frequently quoted as reason for producing temporary population estimates followed by understanding service populations (n=`r nrow(filter(main, Purpose_1 == "Service population" | Purpose_2 == "Service population"))`), epidemiology (n=`r nrow(filter(main, Purpose_1 == "Epidemiology" | Purpose_2 == "Epidemiology"))`) and commuting (n=`r nrow(filter(main, Purpose_1 == "Commuting" | Purpose_2 == "Commuting"))`), many studies directly discussing a domain of application. We next discuss the papers under 6 broad domains; (1) data; (2) methods; (3) the geography of estimates; (4) temporal units; (5) population size and composition; and, (6) reproducibility.
 
 ## Data types
 
@@ -128,11 +128,11 @@ Census main advantage is that it provides close to full enumeration of the popul
 
 The second most frequent group of studies was based on data coming from wide array of surveys. The early work from United States can be traced back to the work of Thornthwaite who estimated daytime population of a Central Business District using trafic survey [-@thornthwaiteLouisvilleKentuckyStudy1929; cited in @wheelerUrbanGeographerHis2002]. Others followed including Breese [-@breeseDaytimePopulationCentral1947], Sharp [-@sharpNonResidentialPopulationCentral1955] and Weir [-@weirSurveyDaytimePopulation1960]. The New York Regional Plan Association [-@newyorkregionalplanassociationPersonsVehiclesEntering1949], Seattle City Planning Commission [-@seattlecityplanningcommissionDaytimeNighttimePopulation1951] and Institute for Research in Social Science at the University of North Carolina [-@instituteforresearchinsocialscienceuniversityofnorthcarolinaPopulationDistributionSpatial1952] employed various sources of transportation surveys and cordon counts to estimate number of people in central business districts. Similar work from UK was done by Menzler [-@menzlerEstimateDaytimePopulation1952]. All these early effort relied on relatively simple methods and working with various survey data, often transport related (cordon counts, traffic surveys) but sometimes surveying whole resort town [@ericksonMeasuringResortPopulation1961] or areas with significant concentrations of temporary residents [@happelCountingSnowbirdsImportance2002]. Many of these conceptual approaches have been updated and developed further with various other types of surveys including travel surveys in multiple locations [@wurtelePopulationDynamicsFinal1968; @kavanaughMethodEstimatingDaytime1990; @stutzChartingUrbanSpacetime1992; @roddisMetropolitanActivityProfiles1996; @collinsDaytimePopulationTracking2007; @lauGISBasedStochastic2009; @horanontEstimateAmbientPopulation2010; @charles-edwardsModellingFluxEstimation2011; @sekimotoPFlowReconstructingPeople2011; @himotoModelSpatiotemporalDistribution2014; @kashiyamaOpenPFLOWCreation2017] as well as more traditional, telephone surveys [@galvezMeasurementFloridaTemporary1996] or specific surveys such as counts of indigenous population [@warchivkerTurmoilAboriginalEnumeration2000], all complimenting data sources for estimation of temporary populations.
 
-Although censuses and surveys tend to lose their position as primary source of data, they still remain crucial part of many estimation attempts. There is a shift from using them as primary sources and into providing more complimentary role, for instance serving as starting points for estimation (–for example,  serving as ‘night time population’), delivering time use profiles used to redistribute other data or calibrate models or as a source of validation. For instance, seminal work of LandScan [@bhaduriLandScanUSAHighresolution2007] used Census as one of the main inputs and @maModelingHourlyDistribution2017 used smart card data to redistribute census (night) counts of population across city.
+Although censuses and surveys tend to lose their position as primary source of data, they still remain crucial part of many estimation attempts. There is a shift from using them as primary sources and into providing more complimentary role, for instance serving as starting points for estimation (–for example,  serving as ‘night time population’), delivering time use profiles used to redistribute other data or calibrate models or as a source of validation. For instance, seminal work of LandScan [@bhaduriLandScanUSAHighresolution2007] used Census as one of the main inputs and @maModelingHourlyDistribution2017 used smart card data to redistribute census (night-time) counts of population across city.
 
 Third largest category of studies, and one that experienced the fastest growth in recent years, is work based on mobile phone (MP) data. The earliest identified application of MP data to estimate temporary populations was done in response to Haiti earthquake [@bengtssonImprovedResponseDisasters2011]. That was quickly followed by large scale estimates for Japan [@teradaPopulationEstimationTechnology2013] and analyses of temporary populations in France and Portugal [@devilleDynamicPopulationMapping2014]. Spatial coverage of MP based studies often reflects availability and accessibility of data. For instance, Italy and in particular Milan, are the subject of a number of studies due to the fact that local providers offer access to the aggregated and anonymized call detail records (CDR) [@khodabandelouPopulationEstimationMobile2016]. MP data are also used in parallel with other sources and methods for instance in dasymetric interpolation [@jarvEnhancingSpatialAccuracy2017] or together with transport survey data [@lwinSpaceTimeMultiple2016].
 
-Less common, yet still significant are studies were based on utilities data [@goldschmidtDemoflushEstimatingPopulation1976; @monmouthcountyplanningboardSummerCoastalPopulation2008; @rigall-i-torrentEstimatingOvernightFacto2010; @mckenzieDemographicsFireRisk2016; @edmondsonMakingItCount2019], remote sensing [@taubenbockLinkingStructuralUrban2007; @stathakisSeasonalPopulationEstimates2018] and Wi-Fi [@kontokostaUrbanPhenologyRealtime2017; @crolsQuantifyingAmbientPopulation2019]. Contrary to our expectations, social media (SM) data were only used by one study [@lwinSpaceTimeMultiple2016]. Recognition of complexity of providing estimates together with growing availability of data also led to attempts combining multiple sources of data [@fehrpeersNapaCountyTravel2014, @edmondsonMakingItCount2019].
+Less common, yet still significant are studies were based on utilities data [@goldschmidtDemoflushEstimatingPopulation1976; @monmouthcountyplanningboardSummerCoastalPopulation2008; @rigall-i-torrentEstimatingOvernightFacto2010; @mckenzieDemographicsFireRisk2016; @edmondsonMakingItCount2019], remote sensing [@taubenbockLinkingStructuralUrban2007; @stathakisSeasonalPopulationEstimates2018] and Wi-Fi [@kontokostaUrbanPhenologyRealtime2017; @crolsQuantifyingAmbientPopulation2019]. Contrary to our expectations, social media (SM) data were only used by one study [@lwinSpaceTimeMultiple2016]. Recognition of complexity of providing estimates together with growing availability of data also led to attempts combining multiple sources of data [@fehrpeersNapaCountyTravel2014; @edmondsonMakingItCount2019].
 
 ## Estimation methods
 
@@ -153,11 +153,11 @@ main %>%
   frq(National, sort.frq = "desc")
 
 main %>% 
-  mutate(Region_type = ifelse(National == "yes", "country", Region_type)) %>%
+  mutate(Region_type = ifelse(National == "Yes", "Country", Region_type)) %>%
   frq(Region_type, sort.frq = "desc")
 ```
 
-Only `r percent(nrow(filter(main, National == "yes"))/nrow(main))` of studies reported on estimates created for the whole country (Figure 3). The United States was the most represented with a total of five studies, followed by Australia and England and Wales. Only one developing country, Nepal, [@wilsonRapidRealTimeAssessments2016] was represented and one study reported on two countries [@devilleDynamicPopulationMapping2014]. Studies covering a part of the country were again most frequent in the United States. This was followed by China, Australia, Japan and the United Kingdom. A handful of developing nations [Haiti, Bangladesh, Mozambique, Myanmar and Vietnam] were included as well. A little more than half (`r percent(nrow(filter(main, Region_type == "single city"))/nrow(main))`) of the studies were focused on a single city.
+Only `r percent(nrow(filter(main, National == "Yes"))/nrow(main))` of studies reported on estimates created for the whole country (Figure 3). The United States was the most represented with a total of five studies, followed by Australia and England and Wales. Only one developing country, Nepal, [@wilsonRapidRealTimeAssessments2016] was represented and one study reported on two countries [@devilleDynamicPopulationMapping2014]. Studies covering a part of the country were again most frequent in the United States. This was followed by China, Australia, Japan and the United Kingdom. A handful of developing nations [Haiti, Bangladesh, Mozambique, Myanmar and Vietnam] were included as well. A little more than half (`r percent(nrow(filter(main, Region_type == "Single city"))/nrow(main))`) of the studies were focused on a single city.
 
 ```{r eval=FALSE, include=FALSE}
 main %>% 
@@ -167,7 +167,7 @@ main %>%
   frq(Est_unit_type, sort.frq = c("desc"))
 ```
 
-Two types of spatial unit for the estimates dominated; `r percent((nrow(filter(main, Est_unit_type_1 == "admin" | Est_unit_type_1 == "city")) + nrow(filter(main, Est_unit_type_2 == "admin" | Est_unit_type_2 == "city"))) / nrow(main))` of studies used some form of administrative units (for example, statistical division, county, township or entire city) and `r percent((nrow(filter(main, Est_unit_type_1 == "grid")) + nrow(filter(main, Est_unit_type_2 == "grid"))) / nrow(main))` used grids of varying sizes. Other types of spatial unit included individual points or nodes or Vornoi polygons. A number of studies (n=`r nrow(filter(main, Est_unit_type_2 != ""))`) reported estimates for more than one type of spatial unit.
+Two types of spatial unit for the estimates dominated; `r percent((nrow(filter(main, Est_unit_type_1 == "Administrative" | Est_unit_type_1 == "City")) + nrow(filter(main, Est_unit_type_2 == "Administrative" | Est_unit_type_2 == "City"))) / nrow(main))` of studies used some form of administrative units (for example, statistical division, county, township or entire city) and `r percent((nrow(filter(main, Est_unit_type_1 == "Grid")) + nrow(filter(main, Est_unit_type_2 == "Grid"))) / nrow(main))` used grids of varying sizes. Other types of spatial unit included points, buildings Vornoi polygons or custom units. A number of studies `r nrow(filter(main, Est_unit_type_2 != ""))` reported estimates for more than one type of spatial unit.
 
 ```{r, eval=FALSE}
 descr(main, Est_spat_num_1)
@@ -181,9 +181,12 @@ with median value of `r number(median(main$Est_spat_num_1, na.rm = TRUE), big.ma
 ```{r, eval=FALSE}
 main %>% 
   frq(Day, sort.frq = "desc")
+
+main %>% 
+  frq(Est_tunit, sort.frq = "desc")
 ```
 
-The majority of studies (`r percent(nrow(filter(main, Day == "yes" | Day == "both"))/nrow(main))`) report on daytime populations (or both daytime and seasonal) and is reflected in the choice of the temporal units used in the estimates. A total of `r percent(nrow(filter(main, Est_tunit == "minute/hour"))/nrow(main))` of studies used minutes or hours as their temporal scale, with the second most common unit was split between daytime and night-time estimates (`r percent(nrow(filter(main, Est_tunit == "daytime/nighttime"))/nrow(main))`) or only daytime (`r percent(nrow(filter(main, Est_tunit == "daytime"))/nrow(main))`) (Figure 4). 
+The majority of studies (`r percent(nrow(filter(main, Day == "Yes" | Day == "Both"))/nrow(main))`) report on daytime populations (or both daytime and seasonal) and is reflected in the choice of the temporal units used in the estimates. A total of `r percent(nrow(filter(main, Est_tunit == "Minute/hour"))/nrow(main))` of studies used minutes or hours as their temporal scale, with the second most common unit was split between daytime and night-time estimates (`r percent(nrow(filter(main, Est_tunit == "Daytime/nighttime"))/nrow(main))`) or daytime only (`r percent(nrow(filter(main, Est_tunit == "Daytime"))/nrow(main))`) (Figure 4). 
 
 ## Estimated population size and composition
 
@@ -211,16 +214,7 @@ main %>%
   frq(Validation, sort.frq = c("desc"))
 ```
 
-`r percent(nrow(filter(main, Est_avail == "no"))/nrow(main))` of studies did not report estimates nor indicate where they could be obtained. Similarly, `r percent(nrow(filter(main, Software_avail == "no" | Software_avail == "" ))/nrow(main))` of studies did not report on type of software and/or code used to produce them. In some cases, particularly when relatively simple methods were used (for example, equation based), this does not limit reproducibility or replicability of the studies or possibility to implement them in different settings. However, for many studies, particularly those based on proprietary data, the prospects of generating estimates across different areas allied with their validation are limited. More particularly, validation of the results was not common practice with only `r percent(nrow(filter(main, Validation == "yes"))/nrow(main))` reporting some attempt at validation with lack of data was often quoted as a main reason for not undertaking the task.
-
-
-
-
-
-
-
-
-
+`r percent(nrow(filter(main, Est_avail == "No"))/nrow(main))` of studies did not report estimates nor indicate where they could be obtained. Similarly, `r percent(nrow(filter(main, Software_avail == "No" | Software_avail == "" ))/nrow(main))` of studies did not report on type of software and/or code used to produce them. In some cases, particularly when relatively simple methods were used (for example, equation based), this does not limit reproducibility or replicability of the studies or possibility to implement them in different settings. However, for many studies, particularly those based on proprietary data, the prospects of generating estimates across different areas allied with their validation are limited. More particularly, validation of the results was not common practice with only `r percent(nrow(filter(main, Validation == "Yes"))/nrow(main))` reporting some attempt at validation with lack of data was often quoted as a main reason for not undertaking the task.
 
 # Conclusions
 
@@ -276,7 +270,7 @@ Very small amount of studies provide code /software used for analyses. Mention n
 Importance of good quality of census and survey data as a basis for other methods.
 
 In the absence of official estimates cities and regions attempt their own calculations 
-[@lambEstimatingSeasonalPopulation1999, @monmouthcountyplanningboardSummerCoastalPopulation2008, @fehrpeersNapaCountyTravel2014, @hodurServicePopulationEstimates2015, @edmondsonMakingItCount2019]
+[@lambEstimatingSeasonalPopulation1999; @monmouthcountyplanningboardSummerCoastalPopulation2008; @fehrpeersNapaCountyTravel2014; @hodurServicePopulationEstimates2015; @edmondsonMakingItCount2019, @harrisWashingtonCountyTemporary2019]
 
 
 ## Strengths
@@ -416,7 +410,6 @@ temp <- main %>%
   frq(Source, sort.frq = "desc", show.na = FALSE) 
 
 
-
 table_1 <- rbind(table_1,
                  cbind(Characteristic = c("Search method", 
                                           cbind(rep("", length(temp[[1]]$val)-1))),
@@ -443,7 +436,7 @@ temp <- main %>%
   select(starts_with("Purpose_")) %>% 
   mutate_all(na_if, "") %>%   
   gather(Order, Purpose, Purpose_1:Purpose_2) %>% 
-  mutate(Purpose = ifelse(Purpose %in% c("emergency planning", "service population", "epidemiology", "commuting") | is.na(Purpose), Purpose, "other")) %>% 
+  mutate(Purpose = ifelse(Purpose %in% c("Emergency planning", "Service population", "Epidemiology", "Commuting") | is.na(Purpose), Purpose, "Other")) %>% 
   frq(Purpose, sort.frq = "desc", show.na = FALSE)
 
 table_1 <- rbind(table_1,
@@ -455,7 +448,6 @@ table_1 <- rbind(table_1,
 )
 
 # Data type
-# Purpose
 temp <- main %>% 
   select(starts_with("Type_")) %>% 
   mutate_all(na_if, "") %>%   
@@ -463,7 +455,7 @@ temp <- main %>%
   frq(Type, sort.frq = "desc", show.na = FALSE)
 
 table_1 <- rbind(table_1,
-                 cbind(Characteristic = c("Purpose of publication*", 
+                 cbind(Characteristic = c("Main type of data*", 
                                           cbind(rep("", length(temp[[1]]$val)-1))),
                        Value = as.character(temp[[1]]$val), 
                        `n / median` = temp[[1]]$frq, 
@@ -475,7 +467,7 @@ table_1 <- rbind(table_1,
 # Region of study
 temp <- main %>% 
   mutate_all(na_if, "") %>%   
-  mutate(Region_type = ifelse(National == "yes", "country", Region_type)) %>%
+  mutate(Region_type = ifelse(National == "Yes", "Country", Region_type)) %>%
   frq(Region_type, sort.frq = "desc", show.na = FALSE)
 
 table_1 <- rbind(table_1,
@@ -492,7 +484,7 @@ temp <- main %>%
   mutate_all(na_if, "") %>%   
   select(starts_with("Est_unit_type_")) %>% 
   gather(Order, Sunit, Est_unit_type_1:Est_unit_type_2) %>% 
-  mutate(Sunit = ifelse(Sunit == "city", "admin", Sunit)) %>% 
+  mutate(Sunit = ifelse(Sunit == "City", "Administrative", Sunit)) %>% 
   frq(Sunit, sort.frq = "desc", show.na = FALSE)
 
 table_1 <- rbind(table_1,

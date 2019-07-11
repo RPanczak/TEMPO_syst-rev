@@ -218,95 +218,46 @@ main %>%
 
 # Conclusions
 
-There exists a longstanding interest and demand for temporary population estimates with a growing number of empirical studies that have sought to develop a suite of methods to generate such outputs. However a disconnect arguably exists between the growing prevalence of such studies and the availability of such estimates through statistical agencies wherein their translation into standardised products appears yet to occur. It would seem that this situation may begin to change in the coming years with the emergence of major programs of research focussed on temporary population estimates to include ENhancing ACTivity and population mapping (ENACT) (Batista e Silva et al. 2018) and Pop 24/7 (Martin, et al. 2015). Through these two programs XXX. 
+The principal aim of this study was to review empirical literature and survey methods of temporary population estimation. We found a strong growth in the number of studies during the last two decades, particularly among studies using data derived from various mobile phone usage statistics. Despite the rise in the amount of studies using novel data and methods, there was a recognition of importance of good quality of census and survey data as a basis for other methods. A small fraction of studies provided actual estimates, and even smaller - sufficently described software and code used for analyses. 
 
+To our knowledge this is the first and only systematic review of literature on this topic. Adopting methods of 'live systematic review' we provided up to date results systematizing state of the art in the field. Collecting the diverse literature might offer guidance towards future work helping to unify terminology and link efforts from multiple disciplines that are involved in the empirical work.
 
+There exists a longstanding interest and demand for temporary population estimates with a growing number of empirical studies that have sought to develop a suite of methods to generate such outputs. However a disconnect arguably exists between the growing prevalence of such studies and the availability of such estimates through statistical agencies wherein their translation into standardised products appears yet to occur. Often, in the absence of official estimates cities and regions attempt their own calculations [@lambEstimatingSeasonalPopulation1999; @monmouthcountyplanningboardSummerCoastalPopulation2008; @fehrpeersNapaCountyTravel2014; @hodurServicePopulationEstimates2015; @edmondsonMakingItCount2019; @harrisWashingtonCountyTemporary2019]. It would seem that this situation may begin to change in the coming years with the emergence of major programs of research focussed on temporary population estimates to include ENhancing ACTivity and population mapping (ENACT) [@batistaesilvaSpatiotemporalMappingPopulation2017] and _Population 24/7_ project [@martinDevelopingFlexibleFramework2015] (see also the subsequent work in _Appendix 5_). 
 
+There is also a large body of literature that have potential overlap with techniques for estimation. Research themes whose methodologies could provide insights estimates of temporary populations inlude: 
 
-Large body of literature on similar topics that have potential overlap such as 
+- estimation of gridded populations (ex. WorldPop [@tatemWorldPopOpenData2017a]); 
 
-- estimates of overall pops (such as WorldPop [@tatemWorldPopOpenData2017a] etc.)
+- analyses of populations derived from various big data sources without expanding results to overall populations (ex. based on mobile phone data [@calabreseRealTimeRome2006; @silmSeasonalVariabilityPopulation2010], Twitter [@brogueiraUsingGeolocatedTweets2016], Snapchat [@juhaszAnalyzingSpatioSpatiotemporal2018] or search engine data [@liSpatiotemporalDistributionCharacteristics2019]);
 
-- MP use (without pop est) >> seminal examples like [@calabreseRealTimeRome2006] and [@silmSeasonalVariabilityPopulation2010]
+- analyses of tourism data such as tourist arrivals at transportation terminals [@jochemEstimatingTravelerPopulations2013] or forecasting tourist volume with search engine data [@liEffectiveTouristVolume2018], Google Analytics [@gunterForecastingCityArrivals2016] or Google Trends [@onderForecastingTourismDemand2017];
 
-- SM use (without pop est) 
-- Twitter [@brogueiraUsingGeolocatedTweets2016]
-- Snapchat [@juhaszAnalyzingSpatioSpatiotemporal2018]
-- search engine data [@liSpatiotemporalDistributionCharacteristics2019]
+- various methodologies of crowd estimation and event monitoring such as classic approaches to demonstration population counts [@yipEstimationNumberPeople2010], agent-based modelling [@chowCrowdsourcingGeocomputationalFramework2018] approaches based on social media [@simsApplicationSocialMedia2017; @bottaMeasuringSizeCrowd2019] or mobile phone [@mameiEstimatingAttendanceCellular2016] data, bluetooth device monitoring [@versicheleUseBluetoothAnalysing2012];
 
-- analyses focusing on mobility rather than stocks and flow estimation [@gonzalezUnderstandingIndividualHuman2008]
+- analyses of pedestrian movements and mobility, for instance based on positioning data [@mizziUnravelingPedestrianMobility2018] or using Wi-Fi & Bluetooth tracking  [@bohmEvaluatingUsageWiFi2016];
 
-- tourism
-- tourist arrivals - here some methods could be adapted to TEMPO for instance 
-- traveler populations at transportation terminals [@jochemEstimatingTravelerPopulations2013]
-- forecasting tourist volume with search engine data [@liEffectiveTouristVolume2018], Google Analytics [@gunterForecastingCityArrivals2016], Google Trends [@onderForecastingTourismDemand2017]
+- tracking buildings occupancy [@stewartCanSocialMedia2017];
 
-- crowd estimation and event monitoring 
-- more classic approach at demonstrations [@yipEstimationNumberPeople2010]
-- agent-based modelling [@chowCrowdsourcingGeocomputationalFramework2018]
-- social media [@simsApplicationSocialMedia2017]
-- bluetooth [@versicheleUseBluetoothAnalysing2012]
-- MP [@mameiEstimatingAttendanceCellular2016]
-- Instagram [@bottaMeasuringSizeCrowd2019]
+- or even the concepts of animal ecology studies, such as analyses of abundance [@melvilleEstimatingSpeciesAbundance2009] or  movement [@millerIntegratedScienceMovement2019].
 
-- pedestrian movements 
-- using GPS & MP [@mizziUnravelingPedestrianMobility2018]
-- using Wi-Fi & Bluetooth [@bohmEvaluatingUsageWiFi2016]
+Many of these studies never move from the analyses of their user bases and an effort would be reqired to extend the results of such approaches to derive estimates of overal population. 
 
-- buildings occupancy [@stewartCanSocialMedia2017]
+It is important to point that the study has several limitations. The work on estimating temporary populations is very fragmented across various domains. It lacks standards and definitions, which makes it difficult to search and synthesize; for instance `r percent(nrow(filter(main, Source == "Manual"))/nrow(main))` of studies included in the review were found outside of the literature searches. The plethora of just the definitions of keywords for defining temporary populations and identifying relevant work. Additionally, some of the keywords overlap with terms used commonly in other disciplines (such as 'working population' used in health and epidemiology or 'seasonal population' used in ecology and related fields) resulting in large amount of false positive findings during literature search. Lastly, there is a large amount of grey literature, for instance `r percent(nrow(filter(main, Pub_type == "Report"))/nrow(main))` of studies included were in form of various reports. All in all, considering these we might have missed or misclassified some of the studies and further effort will be needed to monitor the development of the field. 
 
-- animal & ecology studies 
-- abundance [@melvilleEstimatingSpeciesAbundance2009]
-- movement [@millerIntegratedScienceMovement2019]
-
-But many of these studies never move from the analysis of user base to estimates of pop
-
-New data such as SM offer exciting opportunities but bring with them lots of challenges both with data collection and processing [@liaoBigDataenabledSocial2018, @martiSocialMediaData2018].
-
-Very small amount of studies provide estimates. Mention notable exceptions here... Mention synthetic data...
-
-Very small amount of studies provide code /software used for analyses. Mention notable exceptions here...
-
-Importance of good quality of census and survey data as a basis for other methods.
-
-In the absence of official estimates cities and regions attempt their own calculations 
-[@lambEstimatingSeasonalPopulation1999; @monmouthcountyplanningboardSummerCoastalPopulation2008; @fehrpeersNapaCountyTravel2014; @hodurServicePopulationEstimates2015; @edmondsonMakingItCount2019, @harrisWashingtonCountyTemporary2019]
-
-
-## Strengths
-
-- first and only of this kind?
-
-- up to date results
-
-- systematizing state of the art 
-
-- offers guidance towards future work (terminology, keywords, themes, etc.)
-
-
-## Limitations
-
-- fragmented field, lack of standards and definitions, difficult to search; `r percent(nrow(filter(main, Source == "manual"))/nrow(main))` of studies included were found outside of main searches 
-
-- keywords overlap (ex working pop in epi; seasonal pop in ecology) 
-
-- keyword imprecision ex floating population in Chinese lit
-
-- lots of grey lit, for instance `r percent(nrow(filter(main, Pub_type == "report"))/nrow(main))` of studies were in form of various reports we might have missed things
-
-
-## Recomendations
-
-Temporal trends in publication counts indicate that the field is accelerating. `r percent(nrow(filter(main, Source == "update"))/nrow(main))` of studies included were found by monitoring search engine updates. That points to even more urgent need for standardizing and systematizing field.
-
-- guideline for systematic reporting of temporary populations estimates
-- using @liaoBigDataenabledSocial2018 life cycle - ideas on each stage of development (collection, compilation, analysis & communication)
-- standardization of terminology & keywords
-- encourage to share methodology in more detail, preferably with software/code
-- encourage to share estimates, if original data not available then synthetic data following methodology
-
+Temporal trends in the number of identified publications indicate that the field is accelerating. `r percent(nrow(filter(main, Source == "Update"))/nrow(main))` of studies included were found by monitoring search engine updates after the main literature search was conducted. That points to even more urgent need for standardizing and systematizing work in the field, perhaps even the development of guidelines for systematic reporting of temporary population estimates, encourage more open approaches to sharing data and methodology in more detail, preferably with access to software tools and code used. 
 
 # Contribution
+
+TBA
+
+# Acknowledgments
+
+We would like to thank the authors that responded to queries about details of their work: Christoph Aubrecht, Filipe Batista e Silva, Andrew Collins, Donald G. Janelle, Nik Lomax, David Martin, Chris Needham, Andy Newing, Paola Pucci, Stanley Smith and Martijn Tennekes. 
+
+# Funding
+
+This research was supported through funding from Australian Research Council Linkage Project,
+LP160100305, Estimating Temporary Populations (TEMPO project). The funders had no role in study design, data collection and analysis, decision to publish, or preparation of the manuscript.
 
 # Figures 
 
@@ -383,8 +334,6 @@ main %>%
        y = "Estimated population",
        title = "Size of estimated population across main themes")
 ```
-
-
 
 
 # Tables
@@ -566,15 +515,6 @@ table_1 %>%
 # Bibliography
 
 <div id="refs"></div>
-
-# Acknowledgments
-
-We would like to thank the authors that responded to queries about details of their work: Christoph Aubrecht, Filipe Batista e Silva, Andrew Collins, Donald G. Janelle, Nik Lomax, David Martin, Chris Needham, Andy Newing, Paola Pucci, Stanley Smith and Martijn Tennekes. 
-
-# Funding
-
-This research was supported through funding from Australian Research Council Linkage Project,
-LP160100305, Estimating Temporary Populations (TEMPO project). The funders had no role in study design, data collection and analysis, decision to publish, or preparation of the manuscript.
 
 
 

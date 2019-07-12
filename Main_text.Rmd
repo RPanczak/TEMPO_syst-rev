@@ -1,12 +1,12 @@
 ---
 title: 'Estimating temporary populations: a systematic review of the empirical literature'
 author: "Radoslaw Panczak, Elin Charles-Edwards, Jonathan Corcoran"
-csl: bibliography/demographic-research.csl
+csl: bibliography/demographic-research-mod.csl
 output:
   word_document:
     fig_caption: yes
     toc: no
-    # reference_docx: styles.docx
+    reference_docx: styles.docx
   html_document:
     df_print: paged
     toc: yes
@@ -232,7 +232,7 @@ There is also a large body of literature that have potential overlap with techni
 
 - analyses of tourism data such as tourist arrivals at transportation terminals [@jochemEstimatingTravelerPopulations2013] or forecasting tourist volume with search engine data [@liEffectiveTouristVolume2018], Google Analytics [@gunterForecastingCityArrivals2016] or Google Trends [@onderForecastingTourismDemand2017];
 
-- various methodologies of crowd estimation and event monitoring such as classic approaches to demonstration population counts [@yipEstimationNumberPeople2010], agent-based modelling [@chowCrowdsourcingGeocomputationalFramework2018] approaches based on social media [@simsApplicationSocialMedia2017; @bottaMeasuringSizeCrowd2019] or mobile phone [@mameiEstimatingAttendanceCellular2016] data, bluetooth device monitoring [@versicheleUseBluetoothAnalysing2012];
+- various methodologies of crowd estimation and event monitoring such as classic approaches to demonstration population counts [@yipEstimationNumberPeople2010], agent-based modelling [@chowCrowdsourcingGeocomputationalFramework2019] approaches based on social media [@simsApplicationSocialMedia2017; @bottaMeasuringSizeCrowd2019] or mobile phone [@mameiEstimatingAttendanceCellular2016] data, bluetooth device monitoring [@versicheleUseBluetoothAnalysing2012];
 
 - analyses of pedestrian movements and mobility, for instance based on positioning data [@mizziUnravelingPedestrianMobility2018] or using Wi-Fi & Bluetooth tracking  [@bohmEvaluatingUsageWiFi2016];
 
@@ -246,7 +246,7 @@ It is important to point that the study has several limitations. The work on est
 
 Temporal trends in the number of identified publications indicate that the field is accelerating. `r percent(nrow(filter(main, Source == "Update"))/nrow(main))` of studies included were found by monitoring search engine updates after the main literature search was conducted. That points to even more urgent need for standardizing and systematizing work in the field, perhaps even the development of guidelines for systematic reporting of temporary population estimates, encourage more open approaches to sharing data and methodology in more detail, preferably with access to software tools and code used. 
 
-# Contribution
+# Author's contribution
 
 TBA
 

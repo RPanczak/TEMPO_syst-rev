@@ -358,12 +358,13 @@ TBA
 
 # Acknowledgments
 
-We would like to thank the authors that responded to queries about details of their work: Christoph Aubrecht, Filipe Batista e Silva, Andrew Collins, Donald G. Janelle, Nik Lomax, David Martin, Chris Needham, Andy Newing, Paola Pucci, Stanley Smith and Martijn Tennekes. 
+The authors wish to thank the Australian Bureau of Statistics (ABS), in particular - Denise Carlton,  Andrew Howe, Anthony Grubb, Glen West, Beidar Cho and Karen Ecclestone of ABS for their input on various aspects of the paper. However, the interpretations of the analysis are solely those of the authors and do not necessarily reflect the views and opinions of the ABS or any of their employees. 
+
+We would like to also thank the authors that responded to queries about details of their work: Christoph Aubrecht, Filipe Batista e Silva, Andrew Collins, Donald G. Janelle, Nik Lomax, David Martin, Chris Needham, Andy Newing, Paola Pucci, Stanley Smith and Martijn Tennekes. 
 
 # Funding
 
-This research was supported through funding from Australian Research Council Linkage Project,
-LP160100305, Estimating Temporary Populations (TEMPO project). The funders had no role in study design, data collection and analysis, decision to publish, or preparation of the manuscript.
+This research was funded by the Australian Government through the Australian Research Council Linkage project scheme, LP160100305.
 
 
 # Tables

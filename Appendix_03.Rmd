@@ -15,7 +15,6 @@ link-citations: yes
 csl: bibliography/demographic-research-mod.csl
 bibliography:
 - bibliography/Temporary Populations.bib
-- bibliography/Extras.bib
 header-includes: 1
   - \pagenumbering{gobble}
 nocite: | 

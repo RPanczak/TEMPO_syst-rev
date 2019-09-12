@@ -37,8 +37,8 @@ main <- read_excel("./data/TEMPO_SR_2019-08-13.xlsx", sheet = "Main") %>%
          Est_tunit_num = as.numeric(Est_tunit_num),
          Est_spat_num_1 = as.numeric(Est_spat_num_1),
          Est_spat_num_2 = as.numeric(Est_spat_num_2))
-# View(main)
 
+# View(main)
 ```
 
 # Abstract {-}
@@ -47,16 +47,16 @@ main <- read_excel("./data/TEMPO_SR_2019-08-13.xlsx", sheet = "Main") %>%
 The estimation of temporary populations is a well-established field, but despite growing interest they are yet to form part of the standard suite of official population statistics. 
 
 **OBJECTIVE**
-This systematic review seeks to review the empirical literature on temporary population estimation and identify the contemporary ‘state of the art’. 
+This systematic review seeks to review the empirical literature on temporary population estimation and identify the contemporary "state of the art". 
 
 **RESULTS**
-We identify a total of `r nrow(main)` studies that attempt to estimate or describe a method of estimation. Our findings reveal strong growth in the number of studies in recent decades that in part has been driven by the rise in both the type and availability of new sources of information, including mobile phone data. 
+We identify a total of `r nrow(main)` studies that attempt to estimate or describe a method of estimation. Our findings reveal strong growth in the number of studies in recent decades that in part has been driven by the rise in both the type and availability of new sources of information, including mobile phone data. What emerges from this systematic review is the lack of any “gold standard” data source or methodology for temporary population estimation. 
 
 **CONCLUSIONS**
-The review points to a number of important challenges that remain for estimating temporary populations, both conceptually and practically. What remains is the need for clear definitions along with identification of appropriate data and methods that are able to robustly capture and measure the diverse array of spatial behaviours that drive temporary population dynamics.
+The review points to a number of important challenges that remain for estimating temporary populations, both conceptually and practically. What remains is the need for clear definitions along with identification of appropriate data and methods that are able to robustly capture and measure the diverse array of spatial behaviours that drive temporary population dynamics. 
 
 **CONTRIBUTION**
-This a first review on this topic that brings together literature from various disciplines and collects methods used for estimation.
+To our knowledge, this a first review on this topic that brings together literature from various disciplines and collects methods used for estimation.
 
 **Keywords:** temporary populations, daytime populations, service populations, seasonal populations, real-time census, social sensing, systematic review
 

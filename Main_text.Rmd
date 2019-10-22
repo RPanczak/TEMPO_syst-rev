@@ -1,7 +1,6 @@
 ---
 title: 'Estimating temporary populations: a systematic review of the empirical literature'
 author: "Radoslaw Panczak, Elin Charles-Edwards, Jonathan Corcoran"
-csl: bibliography/demographic-research-mod.csl
 output:
   word_document:
     fig_caption: yes
@@ -13,17 +12,36 @@ output:
 link-citations: yes
 editor_options:
   chunk_output_type: console
+csl: bibliography/demographic-research-mod.csl
 bibliography:
-- bibliography/Temporary Populations.bib
+  - bibliography/Temporary Populations.bib
+  - bibliography/packages.bib
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 
-library(pacman)
-p_load(tidyverse, readxl, knitr, sjmisc, sjPlot, scales)
+library(dplyr)
+library(tidyr)
+library(readxl)
+library(forcats)
+library(stringr)
+library(ggplot2)
+library(knitr) 
+library(sjmisc)
+library(scales)
 
 ```
+
+```{r citations, eval=FALSE}
+Rcite <-  citation()
+Rcite$key = "core"
+bibtex::write.bib(Rcite, "bibliography/packages.bib")
+
+packages <- c("dplyr", "tidyr", "readxl", "forcats", "stringr", "ggplot2", "knitr", "sjmisc", "scales", "bibtex")
+bibtex::write.bib(packages, "bibliography/packages.bib", append = TRUE)
+```
+
 
 ```{r data, include=FALSE}
 main <- read_excel("./data/TEMPO_SR_2019-10-22.xlsx", sheet = "Main") %>% 
@@ -39,6 +57,7 @@ main <- read_excel("./data/TEMPO_SR_2019-10-22.xlsx", sheet = "Main") %>%
          Est_spat_num_1 = as.numeric(Est_spat_num_1),
          Est_spat_num_2 = as.numeric(Est_spat_num_2))
 
+readr::write_csv(main, "./data/TEMPO_SR_2019-10-22.csv")
 # View(main)
 ```
 
@@ -98,6 +117,8 @@ We developed a data extraction template that was iteratively revised during the 
 1. Publication details: Publication metadata included: author(s), title, source, year and publication type. We classified studies according to the primary source of data: mobile phones, remote sensing, social media, transport (e.g. cordon counts, traffic and smart card data), official statistics (e.g. national censuses, large scale or national demographic surveys and population registers), surveys (e.g. time use surveys, holiday accommodation occupancy surveys), Wi-Fi and data from utility providers (e.g. electricity consumption). Studies could belong to more than one category.
 
 2.	Estimation: characteristics of the estimates reported in the study including whether estimates captured daytime or overnight populations, the country and region for which estimates were made, data sources, methods and software employed, data and population size, number and characteristics of the spatial and temporal units, estimate validation and the purpose for which the estimates were produced.
+
+All analyses were conducted in R [@core] version `r strsplit(version[['version.string']], ' ')[[1]][3]`. Data management used several packages of the tidyverse family [@dplyr; @tidyr; @readxl; @forcats; @stringr]; descriptive statistics were done using sjmisc package [@sjmisc]; reporting was facilitated with knitr [@knitr] accompanied by scales [@scales] and bibtex [@bibtex]; and graphs were produced using the ggplot2 package [@ggplot2].
 
 # Results and Discussion: Estimating temporary populations
 

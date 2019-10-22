@@ -26,7 +26,7 @@ p_load(tidyverse, readxl, knitr, sjmisc, sjPlot, scales)
 ```
 
 ```{r data, include=FALSE}
-main <- read_excel("./data/TEMPO_SR_2019-08-13.xlsx", sheet = "Main") %>% 
+main <- read_excel("./data/TEMPO_SR_2019-10-22.xlsx", sheet = "Main") %>% 
   replace(is.na(.), "") %>% 
   select(-Peer_review, -Theory, -Data_base, 
          -Est_start, -Est_end, 
@@ -47,7 +47,7 @@ main <- read_excel("./data/TEMPO_SR_2019-08-13.xlsx", sheet = "Main") %>%
 **BACKGROUND**
 The estimation of temporary populations is a well-established field, but despite growing interest they are yet to form part of the standard suite of official population statistics. 
 
-**OBJECTIVE**
+**OBJECTIVES**
 This systematic review seeks to review the empirical literature on temporary population estimation and identify the contemporary "state of the art". 
 
 **RESULTS**
@@ -69,11 +69,11 @@ Scholarship concerned with developing a conceptual basis for temporary populatio
 
 Despite growing interest in temporary population statistics, they are not yet part of the standard suite of official population statistics. Historically, this been due to a lack of data capturing temporary populations, but also nascent conceptualisation of temporary populations along with a lack of standard methodologies for their production. Indeed, Smith [-@smithMethodologyEstimatingTemporary1989], in his seminal paper on the estimation of temporary populations, noted that the development of a methodology applicable across a wide range of populations and contexts was ‘most likely impossible’ (p.430). At the time of writing he could not have predicted the proliferation of geo-located data from mobile phones and other emergent technologies that have arisen in the 21<sup>st</sup> Century with potential for the sensing of temporary populations across large geographic areas and in widely differing contexts. The current study assesses progress in the field of temporary population statistics. To this end, we conduct a systematic review of the international literature on the estimation of temporary populations to identify the contemporary state of the art. We seek to understand the volume, geography, population coverage along with the data and methods used to generate temporary population estimates.
 
-The remainder of the paper is structured as follows. In Section 2, we detail the study methods including information sources and search terms, eligibility criteria and data extraction. In Section 3, we report the results of the review across a number of themes including: Publication time frame, Sources and reasons for estimates; Data types; Estimation methods; The geography of estimates; The temporal units of estimates; Estimated population size and composition; and Reproducibility. In the final sections of the paper we summarise the current start of the art in the field.
+The remainder of the paper is structured as follows. In Section 2, we detail the study methods including information sources and search terms, eligibility criteria and data extraction. In Section 3, we report the results of the review across a number of themes including: publication time frame, sources and reasons for estimates; data types; estimation methods; the geography of estimates; the temporal units of estimates; estimated population size and composition; and reproducibility. In the final sections of the paper we summarise the current start of the art in the field.
 
 # Methods: Protocol and capture
 
-The review was conducted using the principles of the PRISMA Statement for Reporting Systematic Reviews [@moherPreferredReportingItems2009] (_Appendix 1_). In order to deal with complexity and lack of standarization in the field and to account for theory-building character of this work we additionally adopted "mixed-method review" methodology [@goughQualitativeMixedMethods2015]. This approach allowed us to combine methods of a systematic review (e.g. selection of keywords and sources, eligibility criteria) with the openness and flexibility of traditional reviews. No review protocol was used in this study.
+The review was conducted using the principles of the PRISMA Statement for Reporting Systematic Reviews [@moherPreferredReportingItems2009] (_Appendix 1_). In order to deal with complexity and lack of standardization in the field and to account for theory-building character of this work we additionally adopted "mixed-method review" methodology [@goughQualitativeMixedMethods2015]. This approach allowed us to combine methods of a systematic review (e.g. selection of keywords and sources, eligibility criteria) with the openness and flexibility of traditional reviews. No review protocol was used in this study.
 
 The articles that constituted the review were captured via a search of four databases; (1) Web of Science; (2) Scopus; (3) Google Scholar; and, (4) arXiv. A set of keywords that collectively encompass the breadth of synonyms for temporary populations were used. More specifically, we employed a suite of terms derived from the authors’ knowledge of the field, as well as key words that emerged during early stages of the review process. Terms included: “temporary population”, “working population”, “daytime population”, “mobile population”, “service population”, “floating population”, “elusive population”, “ambient population”, “seasonal population”, “non-resident population”, “real-time census”, “social sensing” and “spatiotemporal population”. We additionally scrutinised the reference lists of included studies to ensure full coverage of articles. Final searches were conducted on the 24 November, 2017. In order to enhance the currency and coverage of the articles captured principles of living systematic review methodology were adopted [@elliottLivingSystematicReviews2014]. To this end updates from three databases covering all original queries were configured along with periodic manual searches on the fourth database to ensure any new articles following the final search were included in the review. The final inclusion of studies into the review was conducted on `r format(Sys.time(), '%d %B %Y')`. Appendix 2 contains details of the full search strategy.
 
@@ -247,7 +247,7 @@ main %>%
   frq(Est_unit_type, sort.frq = c("desc"))
 ```
 
-Two types of spatial unit for the estimates dominated; `r percent((nrow(filter(main, Est_unit_type_1 == "Administrative" | Est_unit_type_1 == "City")) + nrow(filter(main, Est_unit_type_2 == "Administrative" | Est_unit_type_2 == "City"))) / nrow(main))` of studies used some form of administrative unit (for example, a statistical division, a county, a township or metropolitan region) and `r percent((nrow(filter(main, Est_unit_type_1 == "Grid")) + nrow(filter(main, Est_unit_type_2 == "Grid"))) / nrow(main))` used grids of varying sizes. Other types of spatial unit included points, buildings, or some custom units such as voronoi polygons. A number of studies `r nrow(filter(main, Est_unit_type_2 != ""))` reported estimates for more than one type of spatial unit.
+Two types of spatial unit for the estimates dominated; `r percent((nrow(filter(main, Est_unit_type_1 == "Administrative" | Est_unit_type_1 == "City")) + nrow(filter(main, Est_unit_type_2 == "Administrative" | Est_unit_type_2 == "City"))) / nrow(main))` of studies used some form of administrative unit (for example, a statistical division, a county, a township or metropolitan region) and `r percent((nrow(filter(main, Est_unit_type_1 == "Grid")) + nrow(filter(main, Est_unit_type_2 == "Grid"))) / nrow(main))` used grids of varying sizes. Other types of spatial unit included points, buildings, or some custom units such as Voronoi polygons. A number of studies `r nrow(filter(main, Est_unit_type_2 != ""))` reported estimates for more than one type of spatial unit.
 
 ```{r, eval=FALSE}
 descr(main, Est_spat_num_1)
@@ -301,17 +301,22 @@ main %>%
   mutate(Est_pop_size = ifelse(test = (is.na(Est_pop_size) & !is.na(Data_size_users)), 
                                yes = Data_size_users, no = Est_pop_size)) %>% 
   filter(Est_pop_size != "") %>% 
+  mutate(Type_1 = ifelse(test = Type_1 == "Mobile phones", 
+                         yes = "Mobile \nphones", no = Type_1)) %>% 
+  mutate(Type_1 = ifelse(test = Type_1 == "Official statistics", 
+                         yes = "Official \nstatistics", no = Type_1)) %>% 
   ggplot(aes(Type_1, Est_pop_size)) + 
   geom_boxplot(varwidth = TRUE) +
   scale_y_log10() +
   theme_minimal() + 
+  # theme(axis.text.x = element_text(angle = 45, hjust = 1)) + 
   labs(
     # title = "Size of estimated population across main themes",
     x = "Main type of publication",
     y = "Estimated population (log)")
 ```
 
-*Note:* The Main category used. Box width is proportional to the total number of studies. Studies that did not report on an estimated population size using the size of dataset whenever possible.
+*Note:* The first category used. Box width is proportional to the total number of studies. Studies that did not report on an estimated population size using the size of dataset whenever possible.
 
 In terms of composition, the majority of studies focused on total populations present or working populations. For those studies concerned with population estimates of summer resort towns the total population was extended to include temporary or seasonal visitors [@ericksonMeasuringResortPopulation1961; @goldschmidtDemoflushEstimatingPopulation1976]. 
 
@@ -531,7 +536,6 @@ table_1 <- rbind(table_1,
 table_1 %>% 
   kable() 
 ```
-
 
 
 # References

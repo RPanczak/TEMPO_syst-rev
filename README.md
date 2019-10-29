@@ -2,6 +2,8 @@
 
 R code and data to reproduce analyses of the systematic review by Panczak *et al.* (to be submitted).
 
-Part of the TEMPO (**T**echniques for **E**stimating **MO**bile **P**opulations) conducted @UQ_QCPR.
+Part of the TEMPO (**T**echniques for **E**stimating **M**obile **PO**pulations) conducted @UQ_QCPR.
+
+[![DOI](https://zenodo.org/badge/195745469.svg)](https://zenodo.org/badge/latestdoi/195745469)
 
 (CC BY-NC-SA 4.0)

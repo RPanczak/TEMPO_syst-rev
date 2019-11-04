@@ -1,6 +1,6 @@
 ---
-title: 'Estimating temporary populations: a systematic review of the empirical literature'
-author: "Radoslaw Panczak, Elin Charles-Edwards, Jonathan Corcoran"
+# title: 'Estimating temporary populations: a systematic review of the empirical literature'
+# author: "Radoslaw Panczak, Elin Charles-Edwards, Jonathan Corcoran"
 output:
   word_document:
     fig_caption: yes
@@ -12,7 +12,7 @@ output:
 link-citations: yes
 editor_options:
   chunk_output_type: console
-csl: bibliography/demographic-research-mod.csl
+csl: bibliography/population-research-and-policy-review.csl
 bibliography:
   - bibliography/Temporary Populations.bib
   - bibliography/packages.bib
@@ -61,24 +61,24 @@ readr::write_csv(main, "./data/TEMPO_SR_2019-10-22.csv")
 # View(main)
 ```
 
-# Abstract {-}
+<!-- # Abstract {-} -->
 
-**BACKGROUND**
-The estimation of temporary populations is a well-established field, but despite growing interest they are yet to form part of the standard suite of official population statistics. 
+<!-- **BACKGROUND** -->
+<!-- The estimation of temporary populations is a well-established field, but despite growing interest they are yet to form part of the standard suite of official population statistics.  -->
 
-**OBJECTIVES**
-This systematic review seeks to review the empirical literature on temporary population estimation and identify the contemporary "state of the art". 
+<!-- **OBJECTIVES** -->
+<!-- This systematic review seeks to review the empirical literature on temporary population estimation and identify the contemporary "state of the art".  -->
 
-**RESULTS**
-We identify a total of `r nrow(main)` studies that attempt to estimate or describe a method of estimation. Our findings reveal strong growth in the number of studies in recent decades that in part has been driven by the rise in both the type and availability of new sources of information, including mobile phone data. What emerges from this systematic review is the lack of any “gold standard” data source or methodology for temporary population estimation. 
+<!-- **RESULTS** -->
+<!-- We identify a total of `r nrow(main)` studies that attempt to estimate or describe a method of estimation. Our findings reveal strong growth in the number of studies in recent decades that in part has been driven by the rise in both the type and availability of new sources of information, including mobile phone data. What emerges from this systematic review is the lack of any “gold standard” data source or methodology for temporary population estimation.  -->
 
-**CONCLUSIONS**
-The review points to a number of important challenges that remain for estimating temporary populations, both conceptually and practically. What remains is the need for clear definitions along with identification of appropriate data and methods that are able to robustly capture and measure the diverse array of spatial behaviours that drive temporary population dynamics. 
+<!-- **CONCLUSIONS** -->
+<!-- The review points to a number of important challenges that remain for estimating temporary populations, both conceptually and practically. What remains is the need for clear definitions along with identification of appropriate data and methods that are able to robustly capture and measure the diverse array of spatial behaviours that drive temporary population dynamics.  -->
 
-**CONTRIBUTION**
-To our knowledge, this a first review on this topic that brings together literature from various disciplines and collects methods used for estimation.
+<!-- **CONTRIBUTION** -->
+<!-- To our knowledge, this a first review on this topic that brings together literature from various disciplines and collects methods used for estimation. -->
 
-**Keywords:** temporary populations, daytime populations, service populations, seasonal populations, real-time census, social sensing, systematic review
+<!-- **Keywords:** temporary populations, daytime populations, service populations, seasonal populations, real-time census, social sensing, systematic review -->
 
 # Background
 
@@ -374,15 +374,15 @@ It is important to highlight two interrelated limitations of the current study. 
 
 In sum, there is little doubt that the field of temporary population estimation will continue to grow however there remains a number of important challenges. Conceptually there is need for the research community and national statistical agencies to develop and agree on clear definitions that enable temporary populations to be classified in order to differentiate them from permanent residents. Practically, there remains much work to complete that comprehensively captures and measures the diverse array of spatial behaviours that involve different spatial circuits and are undertaken for a myriad of different purposes. Coordinated efforts that address both of these remaining challenges will ensure that we progress towards a more robust conceptual and empirical framework for the estimation of temporary populations.
 
-# Acknowledgments
+<!-- # Acknowledgments -->
 
-The authors wish to thank the Australian Bureau of Statistics (ABS), in particular - Denise Carlton,  Andrew Howe, Anthony Grubb, Glen West, Beidar Cho and Karen Ecclestone of ABS for their input on various aspects of the paper. However, the interpretations of the analysis are solely those of the authors and do not necessarily reflect the views and opinions of the ABS or any of their employees. 
+<!-- The authors wish to thank the Australian Bureau of Statistics (ABS), in particular - Denise Carlton,  Andrew Howe, Anthony Grubb, Glen West, Beidar Cho and Karen Ecclestone of ABS for their input on various aspects of the paper. However, the interpretations of the analysis are solely those of the authors and do not necessarily reflect the views and opinions of the ABS or any of their employees.  -->
 
-We would like to also thank the authors that responded to queries about details of their work: Christoph Aubrecht, Filipe Batista e Silva, Andrew Collins, Donald G. Janelle, Nik Lomax, David Martin, Chris Needham, Andy Newing, Paola Pucci, Stanley Smith and Martijn Tennekes. 
+<!-- We would like to also thank the authors that responded to queries about details of their work: Christoph Aubrecht, Filipe Batista e Silva, Andrew Collins, Donald G. Janelle, Nik Lomax, David Martin, Chris Needham, Andy Newing, Paola Pucci, Stanley Smith and Martijn Tennekes.  -->
 
-# Funding
+<!-- # Funding -->
 
-This research was funded by the Australian Government through the Australian Research Council Linkage project scheme, LP160100305.
+<!-- This research was funded by the Australian Government through the Australian Research Council Linkage project scheme, LP160100305. -->
 
 # Tables
 

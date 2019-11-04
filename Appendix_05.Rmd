@@ -25,7 +25,7 @@ p_load(tidyverse, readxl, kableExtra)
 ```
 
 ```{r data, include=FALSE}
-applications <- read_excel("./data/TEMPO_SR_2019-08-13.xlsx", sheet = "Related") %>% 
+applications <- read_excel("./data/TEMPO_SR_2019-10-22.xlsx", sheet = "Related") %>% 
   replace(is.na(.), "")
 ```
 

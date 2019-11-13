@@ -12,7 +12,7 @@ output:
     toc_depth: 4
     # toc_float: yes
 link-citations: yes
-csl: bibliography/population-research-and-policy-review.csl
+csl: bibliography/plos.csl
 bibliography:
 - bibliography/Temporary Populations.bib
 header-includes: 1

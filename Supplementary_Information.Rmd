@@ -1,7 +1,7 @@
 ---
 title: "Estimating temporary populations: a systematic review of the empirical literature"
 subtitle: "Supplementary Information"
-author: "Radoslaw Panczak, Elin Charles-Edwards, Jonathan Corcoran"
+# author: "Radoslaw Panczak, Elin Charles-Edwards, Jonathan Corcoran"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
   bookdown::html_document2:
@@ -116,6 +116,8 @@ nocite: |
   @yunImplementationFloatingPopulation2019
 ---
 
+<P style="page-break-before: always">
+
 # Supplementary Text S1: Search strategy
 
 We searched four major databases of scientific literature: arXiv, Google Scholar, Scopus and Web of Science. 
@@ -154,13 +156,15 @@ Martí, P., Serrano-Estrada, L., & Nolasco-Cirugeda, A. (2018). Social Media dat
 
 Williams, S. (2016). Statistical uses for mobile phone data: literature review (ONS methodology working paper series No. 8). Newport: Office for National Statistics. Retrieved from https://www.ons.gov.uk/methodology/methodologicalpublications/generalmethodology/onsworkingpaperseries/onsmethodologyworkingpaperseriesno8statisticalusesformobilephonedataliteraturereview
 
-
-
-
+<P style="page-break-before: always">
 
 # Supplementary Text S2: Full list of studies included in the review.
 
 <div id="refs"></div>
+
+<P style="page-break-before: always">
+
+<P style="page-break-before: always">
 
 # Supplementary Table S2: Main characteristics of the studies.
 
@@ -242,6 +246,8 @@ main %>%
                       "Number of spatial units for estimated population (2)")) %>%  
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
 ```
+
+<P style="page-break-before: always">
 
 # Supplementary Table S3: Applications & related studies.
 

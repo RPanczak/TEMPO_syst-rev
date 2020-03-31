@@ -1,7 +1,7 @@
 ---
 title: "Estimating temporary populations: a systematic review of the empirical literature"
 subtitle: "Supplementary Information"
-# author: "Radoslaw Panczak, Elin Charles-Edwards, Jonathan Corcoran"
+author: "Radoslaw Panczak, Elin Charles-Edwards, Jonathan Corcoran"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
   bookdown::html_document2:
@@ -19,101 +19,101 @@ header-includes: 1
   - \pagenumbering{gobble}
 nocite: | 
   @censusofenglandandwales1921Workplaces1925, 
-  @thornthwaiteLouisvilleKentuckyStudy1929,
-  @breeseDaytimePopulationCentral1947,
-  @newyorkregionalplanassociationPersonsVehiclesEntering1949,
-  @seattlecityplanningcommissionDaytimeNighttimePopulation1951,
-  @foleyDailyMovementPopulation1952,
-  @instituteforresearchinsocialscienceuniversityofnorthcarolinaPopulationDistributionSpatial1952,
-  @menzlerEstimateDaytimePopulation1952,
-  @sharpNonResidentialPopulationCentral1955,
-  @bureauofthecensusPopulationEstimatesSurvival1956,
-  @weirSurveyDaytimePopulation1960,
-  @ericksonMeasuringResortPopulation1961,
-  @wurtelePopulationDynamicsFinal1968,
-  @goldschmidtDemoflushEstimatingPopulation1976,
-  @fultonEstimatingDaytimePopulation1984,
-  @goberGeographyNonpermanentResidence1984,
-  @kavanaughMethodEstimatingDaytime1990,
-  @banzPredictionTimedependentPopulation1992,
-  @nelsonEstimatingFunctionalPopulation1992,
-  @stutzChartingUrbanSpacetime1992,
-  @akkermanUrbanHouseholdPattern1995,
-  @galvezMeasurementFloridaTemporary1996,
-  @bellPatternsTemporaryMobility1998,
-  @roddisMetropolitanActivityProfiles1996,
-  @taylorMeasuringShortTerm1998,
-  @yongliResearchStatisticalModels1998,
-  @warchivkerTurmoilAboriginalEnumeration2000,
-  @lambEstimatingSeasonalPopulation1999,
-  @happelCountingSnowbirdsImportance2002,
-  @mcphersonDayNightPopulation2003,
-  @smithNationalPopulationData2005,
-  @sleeterEstimatingDaytimeNighttime2006,
-  @aholaSpatiotemporalPopulationModel2007,
-  @bhaduriLandScanUSAHighresolution2007,
-  @collinsDaytimePopulationTracking2007,
-  @needhamUsingGISModel2007,
-  @taubenbockLinkingStructuralUrban2007,
-  @monmouthcountyplanningboardSummerCoastalPopulation2008,
-  @lauGISBasedStochastic2009,
-  @campbellDevelopingExtensibleSolution2010,
-  @freireModelingSpatiotemporalDistribution2010,
-  @horanontEstimateAmbientPopulation2010,
-  @rigall-i-torrentEstimatingOvernightFacto2010,
-  @bellComparingMethodsEstimation2011,
-  @bengtssonImprovedResponseDisasters2011,
-  @charles-edwardsModellingFluxEstimation2011,
-  @kobayashiVisualizingDiurnalPopulation2011,
-  @sekimotoPFlowReconstructingPeople2011,
-  @swansonEstimatingFactoPopulation2011,
-  @walkerAgentbasedPopulationModel2012,
-  @charles-edwardsEstimatingServicePopulation2013,
-  @hugoTimeTideMoving2013,
-  @markhamNewDirectionsIndigenous2013,
-  @mckenzieCommuteradjustedPopulationEstimates2013,
-  @officefornationalstatistics2011CensusWorkday2013,
-  @teradaPopulationEstimationTechnology2013,
-  @araImpactTemporalPopulation2014,
-  @devilleDynamicPopulationMapping2014,
-  @fehrpeersNapaCountyTravel2014,
-  @gaoAssessingSocialEconomic2014,
-  @graebertNorthwestMichiganSeasonal2014,
-  @himotoModelSpatiotemporalDistribution2014,
-  @gregerSpatioTemporalBuildingPopulation2015,
-  @hodurServicePopulationEstimates2015,
-  @martinDevelopingFlexibleFramework2015,
-  @qiModelingSpatialDistribution2015,
-  @khakpourAttractionbasedCellularAutomaton2016,
-  @khodabandelouPopulationEstimationMobile2016,
-  @lwinSpaceTimeMultiple2016,
-  @mckenzieDemographicsFireRisk2016,
-  @wilsonRapidRealTimeAssessments2016,
-  @xuContextawareRealtimePopulation2016,
-  @adamiakSeasonalResidenceCounterurbanization2017,
-  @batistaesilvaSpatiotemporalMappingPopulation2017,
-  @jarvEnhancingSpatialAccuracy2017,
-  @kashiyamaOpenPFLOWCreation2017,
-  @kimModellingDaytimePopulation2017,
-  @kontokostaUrbanPhenologyRealtime2017,
-  @maModelingHourlyDistribution2017,
-  @mortonSimulationApproachModeling2017,
-  @thomasUseMobileDevice2017,
-  @stathakisSeasonalPopulationEstimates2018,
-  @batranInferencingHumanSpatiotemporal2018,
-  @boeingEstimatingLocalDaytime2018,
-  @chenFinegrainedPredictionUrban2018,
-  @esriMethodologyStatement20182018,
-  @liuMappingHourlyDynamics2018,
-  @picornellPopulationDynamicsBased2018,
-  @thakurMethodologyAccountSeasonal2018,
-  @zagattiTripWorkEstimation2018,
-  @zinEstimationOriginatingDestinationTrips2018,
-  @crolsQuantifyingAmbientPopulation2019,
-  @edmondsonMakingItCount2019,
-  @harrisWashingtonCountyTemporary2019,
-  @xuUnravelingEnvironmentalJustice2019,
-  @yunImplementationFloatingPopulation2019
+    @thornthwaiteLouisvilleKentuckyStudy1929,
+    @breeseDaytimePopulationCentral1947,
+    @newyorkregionalplanassociationPersonsVehiclesEntering1949,
+    @seattlecityplanningcommissionDaytimeNighttimePopulation1951,
+    @foleyDailyMovementPopulation1952,
+    @instituteforresearchinsocialscienceuniversityofnorthcarolinaPopulationDistributionSpatial1952,
+    @menzlerEstimateDaytimePopulation1952,
+    @sharpNonResidentialPopulationCentral1955,
+    @bureauofthecensusPopulationEstimatesSurvival1956,
+    @weirSurveyDaytimePopulation1960,
+    @ericksonMeasuringResortPopulation1961,
+    @wurtelePopulationDynamicsFinal1968,
+    @goldschmidtDemoflushEstimatingPopulation1976,
+    @fultonEstimatingDaytimePopulation1984,
+    @goberGeographyNonpermanentResidence1984,
+    @kavanaughMethodEstimatingDaytime1990,
+    @banzPredictionTimedependentPopulation1992,
+    @nelsonEstimatingFunctionalPopulation1992,
+    @stutzChartingUrbanSpacetime1992,
+    @akkermanUrbanHouseholdPattern1995,
+    @galvezMeasurementFloridaTemporary1996,
+    @bellPatternsTemporaryMobility1998,
+    @roddisMetropolitanActivityProfiles1996,
+    @taylorMeasuringShortTerm1998,
+    @yongliResearchStatisticalModels1998,
+    @warchivkerTurmoilAboriginalEnumeration2000,
+    @lambEstimatingSeasonalPopulation1999,
+    @happelCountingSnowbirdsImportance2002,
+    @mcphersonDayNightPopulation2003,
+    @smithNationalPopulationData2005,
+    @sleeterEstimatingDaytimeNighttime2006,
+    @aholaSpatiotemporalPopulationModel2007,
+    @bhaduriLandScanUSAHighresolution2007,
+    @collinsDaytimePopulationTracking2007,
+    @needhamUsingGISModel2007,
+    @taubenbockLinkingStructuralUrban2007,
+    @monmouthcountyplanningboardSummerCoastalPopulation2008,
+    @lauGISBasedStochastic2009,
+    @campbellDevelopingExtensibleSolution2010,
+    @freireModelingSpatiotemporalDistribution2010,
+    @horanontEstimateAmbientPopulation2010,
+    @rigall-i-torrentEstimatingOvernightFacto2010,
+    @bellComparingMethodsEstimation2011,
+    @bengtssonImprovedResponseDisasters2011,
+    @charles-edwardsModellingFluxEstimation2011,
+    @kobayashiVisualizingDiurnalPopulation2011,
+    @sekimotoPFlowReconstructingPeople2011,
+    @swansonEstimatingFactoPopulation2011,
+    @walkerAgentbasedPopulationModel2012,
+    @charles-edwardsEstimatingServicePopulation2013,
+    @hugoTimeTideMoving2013,
+    @markhamNewDirectionsIndigenous2013,
+    @mckenzieCommuteradjustedPopulationEstimates2013,
+    @officefornationalstatistics2011CensusWorkday2013,
+    @teradaPopulationEstimationTechnology2013,
+    @araImpactTemporalPopulation2014,
+    @devilleDynamicPopulationMapping2014,
+    @fehrpeersNapaCountyTravel2014,
+    @gaoAssessingSocialEconomic2014,
+    @graebertNorthwestMichiganSeasonal2014,
+    @himotoModelSpatiotemporalDistribution2014,
+    @gregerSpatioTemporalBuildingPopulation2015,
+    @hodurServicePopulationEstimates2015,
+    @martinDevelopingFlexibleFramework2015,
+    @qiModelingSpatialDistribution2015,
+    @khakpourAttractionbasedCellularAutomaton2016,
+    @khodabandelouPopulationEstimationMobile2016,
+    @lwinSpaceTimeMultiple2016,
+    @mckenzieDemographicsFireRisk2016,
+    @wilsonRapidRealTimeAssessments2016,
+    @xuContextawareRealtimePopulation2016,
+    @adamiakSeasonalResidenceCounterurbanization2017,
+    @batistaesilvaSpatiotemporalMappingPopulation2017,
+    @jarvEnhancingSpatialAccuracy2017,
+    @kashiyamaOpenPFLOWCreation2017,
+    @kimModellingDaytimePopulation2017,
+    @kontokostaUrbanPhenologyRealtime2017,
+    @maModelingHourlyDistribution2017,
+    @mortonSimulationApproachModeling2017,
+    @thomasUseMobileDevice2017,
+    @stathakisSeasonalPopulationEstimates2018,
+    @batranInferencingHumanSpatiotemporal2018,
+    @boeingEstimatingLocalDaytime2018,
+    @chenFinegrainedPredictionUrban2018,
+    @esriMethodologyStatement20182018,
+    @liuMappingHourlyDynamics2018,
+    @picornellPopulationDynamicsBased2018,
+    @thakurMethodologyAccountSeasonal2018,
+    @zagattiTripWorkEstimation2018,
+    @zinEstimationOriginatingDestinationTrips2018,
+    @crolsQuantifyingAmbientPopulation2019,
+    @edmondsonMakingItCount2019,
+    @harrisWashingtonCountyTemporary2019,
+    @xuUnravelingEnvironmentalJustice2019,
+    @yunImplementationFloatingPopulation2019
 ---
 
 <P style="page-break-before: always">
@@ -124,15 +124,15 @@ We searched four major databases of scientific literature: arXiv, Google Scholar
 
 ## arXiv 
 
-arXiv was searched on the 21 December 2017 using web interface. We used all search terms defined in the main text. Since there was no possibility to set up automatic updates we monitored the source manually until the day of submission of the manuscript. 
+arXiv was searched on the 21^st^ December 2017 using web interface. We used all search terms defined in the main text. Since there was no possibility to set up automatic updates we monitored the source manually until the day of submission of the manuscript. 
 
 ## Google Scholar 
 
-Google Scholar was searched between 8 and 9 November 2017 using Publish or Perish software (Harzing 2007, available from https://harzing.com/resources/publish-or-perish). Due to very large amount of retried records we excluded search terms "working population",	"mobile population", "service population",	"floating population" and "seasonal population". We updated the search for the "spatiotemporal population" keyword on 29 November 2017. Because of the limitations of the data retrieval we searched for each of the keywords separately and limited the number of years of publication to achieve full coverage. The results were then monitored by scrutinizing email update service set up for each search. 
+Google Scholar was searched between 8^th^ and 9^th^ November 2017 using Publish or Perish software (Harzing 2007, available from https://harzing.com/resources/publish-or-perish). Due to very large amount of retried records we excluded search terms "working population",	"mobile population", "service population",	"floating population" and "seasonal population". We updated the search for the "spatiotemporal population" keyword on 29^th^ November 2017. Because of the limitations of the data retrieval we searched for each of the keywords separately and limited the number of years of publication to achieve full coverage. The results were then monitored by scrutinizing email update service set up for each search. 
 
 ## Scopus
 
-Scopus was searched on the 7 November 2017 using web interface. We searched for primary results and "secondary documents". We excluded subject areas not related to the topic ("Medicine", "Biochemistry, Genetics and Molecular Biology", "Chemistry", "Psychology", "Immunology and Microbiology"). We updated the search for the "spatiotemporal population" keyword on 24 November 2017. The results were then monitored by scrutinizing RSS service feed with updates for each search. 
+Scopus was searched on the 7^th^ November 2017 using web interface. We searched for primary results and "secondary documents". We excluded subject areas not related to the topic ("Medicine", "Biochemistry, Genetics and Molecular Biology", "Chemistry", "Psychology", "Immunology and Microbiology"). We updated the search for the "spatiotemporal population" keyword on 24^th^ November 2017. The results were then monitored by scrutinizing RSS service feed with updates for each search. 
 
 ## Web Of Science 
 
@@ -172,7 +172,7 @@ Williams, S. (2016). Statistical uses for mobile phone data: literature review (
 knitr::opts_chunk$set(echo = FALSE)
 
 library(pacman)
-p_load(tidyverse, readxl, kableExtra)
+p_load(tidyverse, readxl, kableExtra, DT)
 
 ```
 
@@ -184,7 +184,7 @@ main <- read_excel("./data/TEMPO_SR_2019-10-22.xlsx",
 
 ## Source, type, purpose, main data and methods 
 
-```{r}
+```{r eval=FALSE, include=FALSE}
 main %>% 
   select(FA_surname, Year_pub, 
          Source, Pub_type, 
@@ -205,9 +205,41 @@ main %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
 ```
 
+```{r}
+main %>% 
+  select(FA_surname, Year_pub, 
+         Source, Pub_type, 
+         Purpose_1, Purpose_2, 
+         Type_1, Type_2, Type_3, Type_4, 
+         Method) %>% 
+  mutate(Source = as_factor(Source),
+         Pub_type = as_factor(Pub_type),
+         Purpose_1 = as_factor(Purpose_1),
+         Purpose_2 = as_factor(Purpose_2),
+         Type_1 = as_factor(Type_1),
+         Type_2 = as_factor(Type_2),
+         Type_3 = as_factor(Type_3),
+         Type_4 = as_factor(Type_4)) %>% 
+  datatable(filter = 'top', 
+            colnames = c("Author",
+                         "Year of publication",
+                         "Source",
+                         "Type of publication",
+                         "Purpose (1)",  
+                         "Purpose (2)",  
+                         "Main data (1)",
+                         "Main data (2)",
+                         "Main data (3)",
+                         "Main data (4)",
+                         "Methods"),
+  options = list(pageLength = 96, autoWidth = TRUE, dom = 'ft')
+  )
+```
+
+
 ## Coverage, country, region, size of data & population, validation, software, availability of estimates
 
-```{r}
+```{r eval=FALSE, include=FALSE}
 main %>% 
   select(FA_surname, Year_pub,
          National, Country_1, Country_2, 
@@ -228,13 +260,44 @@ main %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
 ```
 
-## Temporal & spatial units 
-
 ```{r}
 main %>% 
   select(FA_surname, Year_pub,
+         National, Country_1, Country_2, 
+         Region_type, Region,
+         Data_size_users, Est_pop_size, 
+         Validation, Software_avail, Est_avail) %>% 
+  mutate(National = as_factor(National),
+         Region_type = as_factor(Region_type),
+         Validation = as_factor(Validation),
+         Software_avail = as_factor(Software_avail),
+         Est_avail = as_factor(Est_avail)) %>%
+  mutate(Data_size_users = as.numeric(Data_size_users),
+         Est_pop_size = as.numeric(Est_pop_size)) %>% 
+  datatable(filter = 'top', 
+            colnames = c("Author",
+                      "Year of publication",
+                      "National coverage", 
+                      "Country (1)", "Country (2)", 
+                      "Type of Region", 
+                      "Name of Region",
+                      "Size of population (data)", 
+                      "Size of population (estimated)", 
+                      "Was validation of the estimates carried out?", 
+                      "Is software used for the estimation avaiable?", 
+                      "Are the estimates avaiable for download?"),
+  options = list(pageLength = 96, autoWidth = TRUE, dom = 'ft')
+  )
+```
+
+## Temporal & spatial units 
+
+```{r eval=FALSE, include=FALSE}
+main %>% 
+  select(FA_surname, Year_pub,
          Day, Est_tunit, Est_tunit_num, 
-         Est_unit_type_1, Est_unit_type_2	, Est_spat_num_1, Est_spat_num_2) %>% 
+         Est_unit_type_1, Est_unit_type_2	, 
+         Est_spat_num_1, Est_spat_num_2) %>% 
   kable(col.names = c("Author",
                       "Year of publication",
                       "Daytime estimates", 
@@ -245,6 +308,35 @@ main %>%
                       "Number of spatial units for estimated population (1)", 
                       "Number of spatial units for estimated population (2)")) %>%  
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+```
+
+```{r}
+main %>% 
+  select(FA_surname, Year_pub,
+         Day, Est_tunit, Est_tunit_num, 
+         Est_unit_type_1, Est_unit_type_2	, 
+         Est_spat_num_1, Est_spat_num_2) %>% 
+  mutate(Day = as_factor(Day),
+         Est_tunit = as_factor(Est_tunit),
+         Est_unit_type_1 = as_factor(Est_unit_type_1),
+         Est_unit_type_2 = as_factor(Est_unit_type_2)
+         ) %>%
+  mutate(Est_tunit_num = as.numeric(Est_tunit_num),
+         Est_spat_num_1 = as.numeric(Est_spat_num_1),
+         Est_spat_num_2 = as.numeric(Est_spat_num_2)
+         ) %>% 
+  datatable(filter = 'top', 
+            colnames = c("Author",
+                      "Year of publication",
+                      "Daytime estimates", 
+                      "Type of temporal unit", 
+                      "Number of temporal unit", 
+                      "Spatial unit for estimated populations (1)",
+                      "Spatial unit for estimated populations (2)",
+                      "Number of spatial units for estimated population (1)", 
+                      "Number of spatial units for estimated population (2)"),
+  options = list(pageLength = 96, autoWidth = TRUE, dom = 'ft')
+  )
 ```
 
 <P style="page-break-before: always">

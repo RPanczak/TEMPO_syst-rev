@@ -2,8 +2,8 @@
 .Rhistory
 .RData
 .Ruserdata
-archive/
-backup/
+archive.zip
+backup.zip
 other/
 search_results/
 submission/

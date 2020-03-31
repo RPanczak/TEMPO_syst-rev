@@ -12,7 +12,7 @@ output:
   word_document:
     fig_caption: yes
     toc: no
-    reference_docx: styles.docx
+    # reference_docx: styles.docx
 link-citations: yes
 editor_options:
   chunk_output_type: console

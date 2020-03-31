@@ -1,6 +1,6 @@
 # TEMPO_syst-rev
 
-R code and data to reproduce analyses of the systematic review by Panczak *et al.* (under revision in *Palgrave Communications*).
+R code and data to reproduce analyses of the systematic review by Panczak *et al.* 2020 *Palgrave Commun*.
 
 Part of the TEMPO (**T**echniques for **E**stimating **M**obile **PO**pulations) project conducted @UQ_QCPR.
 

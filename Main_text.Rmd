@@ -368,6 +368,22 @@ In sum, there is little doubt that the field of temporary population estimation 
 
 <div id="refs"></div>
 
+# Endnotes 
+
+[^1]: Whilst we adopt the definition of temporary populations by Smith [-@smithMethodologyEstimatingTemporary1989] for reasons of inclusiveness and simplicity, we recognise there exists a number of alternate definitions. This is because human spatial mobility is continuous through space and time [@degansReflectionsConceptMigration1994]. For practical purposes it is necessary to delimit temporal and spatial bounds to facilitate measurement and analysis [@goberGeographyNonpermanentResidence1984]. 
+
+# Figures
+
+**Fig 1. Flowchart of study selection.**
+
+**Fig 2. Cumulative distribution of year of publication across data types .** Studies can belong to more than one category; 'Social Media' category has been excluded as it only has one member. 
+
+**Fig 3. Country of temporary population estimates and national coverage.** Study of [@devilleDynamicPopulationMapping2014] describes two countries.
+
+**Fig 4. Temporal units used for estimates.**
+
+**Fig 5. Size of population by main data type.** The first category used. Box width is proportional to the total number of studies. Studies that did not report on an estimated population size using the size of dataset whenever possible.
+
 # Tables
 
 **Table 1. Selected characteristics of included studies.** Note: * indicates that study can belong to more than one category.
@@ -542,35 +558,23 @@ table_1 %>%
   kable() 
 ```
 
-# Figures
+# Data availability statement
 
-**Fig 1. Flowchart of study selection.**
+The datasets generated during and/or analysed during the current study are available in the Zenodo repository, http://doi.org/10.5281/zenodo.3547872.
 
-**Fig 2. Cumulative distribution of year of publication across data types .** Studies can belong to more than one category; 'Social Media' category has been excluded as it only has one member. 
+# Acknowledgements
 
-**Fig 3. Country of temporary population estimates and national coverage.** Study of [@devilleDynamicPopulationMapping2014] describes two countries.
+The authors wish to thank the Australian Bureau of Statistics (ABS), in particular - Denise Carlton,  Andrew Howe, Anthony Grubb, Glen West, Beidar Cho and Karen Ecclestone of ABS for their input on various aspects of the paper. However, the interpretations of the analysis are solely those of the authors and do not necessarily reflect the views and opinions of the ABS or any of their employees.
 
-**Fig 4. Temporal units used for estimates.**
+We would like to also thank the authors that responded to queries about details of their work: Christoph Aubrecht, Filipe Batista e Silva, Andrew Collins, Donald G. Janelle, Nik Lomax, David Martin, Chris Needham, Andy Newing, Paola Pucci, Stanley Smith and Martijn Tennekes.
 
-**Fig 5. Size of population by main data type.** The first category used. Box width is proportional to the total number of studies. Studies that did not report on an estimated population size using the size of dataset whenever possible.
-
-<!-- # Data availability statement  -->
-
-<!-- The datasets generated during and/or analysed during the current study are available in the Zenodo repository, http://doi.org/10.5281/zenodo.3547872. -->
-
-<!-- # Acknowledgements  -->
-
-<!-- The authors wish to thank the Australian Bureau of Statistics (ABS), in particular - Denise Carlton,  Andrew Howe, Anthony Grubb, Glen West, Beidar Cho and Karen Ecclestone of ABS for their input on various aspects of the paper. However, the interpretations of the analysis are solely those of the authors and do not necessarily reflect the views and opinions of the ABS or any of their employees. -->
-
-<!-- We would like to also thank the authors that responded to queries about details of their work: Christoph Aubrecht, Filipe Batista e Silva, Andrew Collins, Donald G. Janelle, Nik Lomax, David Martin, Chris Needham, Andy Newing, Paola Pucci, Stanley Smith and Martijn Tennekes. -->
-
-<!-- This research was funded by the Australian Government through the Australian Research Council Linkage project scheme, LP160100305.  -->
+This research was funded by the Australian Government through the Australian Research Council Linkage project scheme, LP160100305.
 
 # Competing interests 
 
 The authors declare no competing interests.
 
-# Supporting information
+# Supplementary Information
 
 **Supplementary Text S1. Search strategy.**
 **Supplementary Text S2. Full list of studies included in the review.**
@@ -578,4 +582,3 @@ The authors declare no competing interests.
 **Supplementary Table S2. Main characteristics of the studies.**
 **Supplementary Table S3. Applications & related studies.**	
 
-[^1]: Whilst we adopt the definition of temporary populations by Smith [-@smithMethodologyEstimatingTemporary1989] for reasons of inclusiveness and simplicity, we recognise there exists a number of alternate definitions. This is because human spatial mobility is continuous through space and time [@degansReflectionsConceptMigration1994]. For practical purposes it is necessary to delimit temporal and spatial bounds to facilitate measurement and analysis [@goberGeographyNonpermanentResidence1984]. 

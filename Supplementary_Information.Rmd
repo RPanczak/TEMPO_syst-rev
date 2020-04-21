@@ -118,6 +118,14 @@ nocite: |
 
 <P style="page-break-before: always">
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(pacman)
+p_load(tidyverse, readxl, kableExtra, DT)
+
+```
+
 # Supplementary Text S1: Search strategy
 
 We searched four major databases of scientific literature: arXiv, Google Scholar, Scopus and Web of Science. 
@@ -164,22 +172,34 @@ Williams, S. (2016). Statistical uses for mobile phone data: literature review (
 
 <P style="page-break-before: always">
 
+
+# Supplementary Table S1. PRISMA checklist.
+  
+```{r}
+prisma <- read_excel("prisma.xlsx")
+
+prisma %>% 
+  datatable(colnames = c("Section/topic",
+                         "#",
+                          "Checklist item",
+                         "Reported on page #"), 
+                 rownames = FALSE,
+  options = list(pageLength = 34, 
+                 autoWidth = TRUE, 
+                 dom = 'ft')
+  )
+```
+
+Based on PRISMA Checklist available from http://prisma-statement.org/PRISMAStatement/Checklist.aspx 
+
 <P style="page-break-before: always">
 
 # Supplementary Table S2: Main characteristics of the studies.
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-
-library(pacman)
-p_load(tidyverse, readxl, kableExtra, DT)
-
-```
-
 ```{r data-main, include=FALSE}
 main <- read_excel("./data/TEMPO_SR_2019-10-22.xlsx", 
                    sheet = "Main") %>% 
-  replace(is.na(.), "")
+  mutate_if(is.character, ~replace(., is.na(.), ""))
 ```
 
 ## Source, type, purpose, main data and methods 
@@ -345,8 +365,8 @@ main %>%
 
 ```{r data-sup, include=FALSE}
 applications <- read_excel("./data/TEMPO_SR_2019-10-22.xlsx", sheet = "Related") %>% 
-  replace(is.na(.), "")
-```
+  mutate_if(is.character, ~replace(., is.na(.), ""))
+  ```
 
 ```{r}
 applications %>% 
